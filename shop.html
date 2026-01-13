@@ -1,0 +1,1400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - CarX Premium Automotive</title>
+    <link rel="stylesheet" href="styles/shop.css">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <style>
+        /* if needed */
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="shop-header">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <a href="index.html" class="navbar-brand">CarX</a>
+                <div class="shop-header-icons">
+                    <div class="header-icon" id="compareIcon">
+                        <i class="bi bi-arrow-left-right"></i>
+                        <span class="icon-badge" id="compareCount">0</span>
+                    </div>
+                    <div class="header-icon" id="wishlistIcon">
+                        <i class="bi bi-heart"></i>
+                        <span class="icon-badge" id="wishlistCount">0</span>
+                    </div>
+                    <div class="header-icon" id="cartIcon">
+                        <i class="bi bi-cart3"></i>
+                        <span class="icon-badge" id="cartCount">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb-container">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Shop</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Shop Container -->
+    <div class="container shop-container">
+        <!-- Filters Sidebar -->
+        <aside class="filters-sidebar">
+            <div class="filter-card">
+                <h3 class="filter-title">Categories</h3>
+                <ul class="filter-options">
+                    <li><label><input type="checkbox" value="engine"> Engine Parts</label></li>
+                    <li><label><input type="checkbox" value="brakes"> Braking System</label></li>
+                    <li><label><input type="checkbox" value="suspension"> Suspension</label></li>
+                    <li><label><input type="checkbox" value="electrical"> Electrical Parts</label></li>
+                    <li><label><input type="checkbox" value="interior"> Interior Accessories</label></li>
+                    <li><label><input type="checkbox" value="exterior"> Exterior Accessories</label></li>
+                    <li><label><input type="checkbox" value="lighting"> Lighting</label></li>
+                    <li><label><input type="checkbox" value="maintenance"> Tools & Maintenance</label></li>
+                </ul>
+            </div>
+            
+            <div class="filter-card">
+                <h3 class="filter-title">Price Range</h3>
+                <div class="price-range">
+                    <input type="range" class="form-range" min="0" max="100000" step="1000" id="priceRange">
+                    <div class="price-inputs">
+                        <input type="number" placeholder="Min" id="minPrice">
+                        <input type="number" placeholder="Max" id="maxPrice">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="filter-card">
+                <h3 class="filter-title">Brands</h3>
+                <ul class="filter-options">
+                    <li><label><input type="checkbox" value="bosch"> Bosch</label></li>
+                    <li><label><input type="checkbox" value="castrol"> Castrol</label></li>
+                    <li><label><input type="checkbox" value="michelin"> Michelin</label></li>
+                    <li><label><input type="checkbox" value="bridgestone"> Bridgestone</label></li>
+                    <li><label><input type="checkbox" value="shell"> Shell</label></li>
+                    <li><label><input type="checkbox" value="mobil"> Mobil</label></li>
+                </ul>
+            </div>
+            
+            <div class="filter-card">
+                <h3 class="filter-title">Vehicle Type</h3>
+                <ul class="filter-options">
+                    <li><label><input type="checkbox" value="sedan"> Sedan</label></li>
+                    <li><label><input type="checkbox" value="suv"> SUV</label></li>
+                    <li><label><input type="checkbox" value="hatchback"> Hatchback</label></li>
+                    <li><label><input type="checkbox" value="luxury"> Luxury</label></li>
+                    <li><label><input type="checkbox" value="sports"> Sports</label></li>
+                    <li><label><input type="checkbox" value="electric"> Electric</label></li>
+                </ul>
+            </div>
+            
+            <button class="apply-filters-btn" id="applyFilters">Apply Filters</button>
+        </aside>
+        
+        <!-- Products Section -->
+        <main class="products-section">
+            <div class="products-header">
+                <div class="products-count">Showing 1-12 of 24 products</div>
+                <div class="products-sort">
+                    <span>Sort by:</span>
+                    <select id="sortSelect">
+                        <option value="default">Default</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="rating">Highest Rated</option>
+                        <option value="newest">Newest First</option>
+                    </select>
+                    <div class="view-options">
+                        <div class="view-option active" id="gridView">
+                            <i class="bi bi-grid-3x3-gap"></i>
+                        </div>
+                        <div class="view-option" id="listView">
+                            <i class="bi bi-list"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Search Bar -->
+            <div class="search-bar">
+                <input type="text" placeholder="Search products..." id="searchInput">
+                <button id="searchBtn">
+                    <i class="bi bi-search"></i>
+                </button>
+            </div>
+            
+            <!-- Products Grid -->
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be dynamically loaded here -->
+            </div>
+            
+            <!-- Pagination -->
+            <nav aria-label="Page navigation" class="mt-4">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1">Previous</a>
+                    </li>
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">Next</a>
+                    </li>
+                </ul>
+            </nav>
+        </main>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="close-cart" id="closeCart">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="empty-cart">
+                <i class="bi bi-cart-x"></i>
+                <p>Your cart is empty</p>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">₹0.00</span>
+            </div>
+            <button class="checkout-btn" id="checkoutBtn">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Wishlist Sidebar -->
+    <div class="wishlist-sidebar" id="wishlistSidebar">
+        <div class="cart-header">
+            <h3>Your Wishlist</h3>
+            <button class="close-cart" id="closeWishlist">&times;</button>
+        </div>
+        <div class="wishlist-items" id="wishlistItems">
+            <div class="empty-wishlist">
+                <i class="bi bi-heart"></i>
+                <p>Your wishlist is empty</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick View Modal -->
+    <div class="quick-view-modal" id="quickViewModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Product Details</h3>
+                <button class="close-modal" id="closeModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img id="modalImage" src="" alt="Product">
+                </div>
+                <div class="modal-details">
+                    <div class="modal-category" id="modalCategory"></div>
+                    <h2 class="modal-title" id="modalTitle"></h2>
+                    <div class="modal-price">
+                        <span class="current-price" id="modalCurrentPrice"></span>
+                        <span class="original-price" id="modalOriginalPrice"></span>
+                        <span class="discount" id="modalDiscount"></span>
+                    </div>
+                    <div class="modal-rating" id="modalRating"></div>
+                    <div class="inventory-status" id="modalInventory"></div>
+                    <p class="modal-description" id="modalDescription"></p>
+                    
+                    <div class="modal-specs">
+                        <h4>Specifications</h4>
+                        <ul id="modalSpecs">
+                            <!-- Specs will be loaded dynamically -->
+                        </ul>
+                    </div>
+                    
+                    <div class="modal-actions">
+                        <div class="modal-quantity">
+                            <button id="decreaseQty">-</button>
+                            <input type="number" id="productQty" value="1" min="1">
+                            <button id="increaseQty">+</button>
+                        </div>
+                        <div class="modal-buttons">
+                            <button class="modal-add-to-cart" id="modalAddToCart">
+                                <i class="bi bi-cart"></i> Add to Cart
+                            </button>
+                            <div class="modal-action-buttons">
+                                <button class="modal-action-btn" id="modalAddToWishlist">
+                                    <i class="bi bi-heart"></i> Wishlist
+                                </button>
+                                <button class="modal-action-btn" id="modalAddToCompare">
+                                    <i class="bi bi-arrow-left-right"></i> Compare
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Compare Modal -->
+    <div class="compare-modal" id="compareModal">
+        <div class="compare-content">
+            <div class="compare-header">
+                <h3>Compare Products</h3>
+                <button class="close-modal" id="closeCompare">&times;</button>
+            </div>
+            <div id="compareContent">
+                <div class="compare-empty">
+                    <i class="bi bi-arrow-left-right"></i>
+                    <p>No products selected for comparison</p>
+                    <p>Add up to 3 products to compare</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <i class="bi bi-check-circle"></i>
+        <span id="toastMessage">Product added to cart</span>
+    </div>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="bi bi-arrow-up"></i>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script>
+        // Product data
+        const products = [
+            {
+                id: 1,
+                name: "Premium Synthetic Engine Oil",
+                category: "Engine Parts",
+                price: 3499,
+                originalPrice: 3999,
+                rating: 4.5,
+                reviews: 128,
+                image: "https://m.media-amazon.com/images/I/61CoFhoSy1L._UF1000,1000_QL80_.jpg",
+                description: "High-performance synthetic engine oil for enhanced protection. This premium oil provides superior lubrication, reduces engine wear, and improves fuel efficiency.",
+                inventory: "In Stock",
+                specs: [
+                    "Viscosity: 5W-30",
+                    "Capacity: 5 Liters",
+                    "API Rating: SN Plus",
+                    "Synthetic Blend",
+                    "For gasoline and diesel engines"
+                ]
+            },
+            {
+                id: 2,
+                name: "Premium Alloy Wheels Set",
+                category: "Wheels & Tires",
+                price: 24999,
+                originalPrice: 29999,
+                rating: 5,
+                reviews: 96,
+                image: "https://www.cars24.com/article/_next/image/?url=https%3A%2F%2Fcdn.cars24.com%2Fprod%2Fauto-news24-cms%2FCARS24-Blog-Images%2F2024%2F08%2F09%2F962355a0-95e9-4b8d-a372-703ee20ae8ae-How-to-choose-the-perfect-alloy-wheels-for-your-car-(1).jpg&w=750&q=50",
+                description: "18-inch lightweight alloy wheels for improved performance. These wheels are manufactured using advanced forging technology for superior strength and reduced weight.",
+                inventory: "In Stock",
+                specs: [
+                    "Size: 18 inches",
+                    "Material: Aluminum Alloy",
+                    "Finish: Silver Machined",
+                    "Offset: +40mm",
+                    "Bolt Pattern: 5x114.3"
+                ]
+            },
+            {
+                id: 3,
+                name: "Leather Seat Covers",
+                category: "Interior Accessories",
+                price: 12499,
+                originalPrice: 16999,
+                rating: 4,
+                reviews: 74,
+                image: "https://m.media-amazon.com/images/I/81QonsMl7tL.jpg",
+                description: "Premium genuine leather seat covers for enhanced comfort. These custom-fit seat covers protect your original upholstery while adding a touch of luxury.",
+                inventory: "Low Stock",
+                specs: [
+                    "Material: Genuine Leather",
+                    "Color: Black",
+                    "Includes: Front and Rear Seats",
+                    "Features: Breathable, Wear-resistant",
+                    "Compatibility: Universal Fit"
+                ]
+            },
+            {
+                id: 4,
+                name: "Ceramic Brake Pads",
+                category: "Braking System",
+                price: 6299,
+                originalPrice: null,
+                rating: 4.5,
+                reviews: 112,
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwKqS3jHA6CmClfqoxCLva8ar-okyJnaLA5Q&s",
+                description: "High-performance ceramic brake pads for better stopping power. These brake pads provide quiet operation, produce less dust, and offer excellent braking performance.",
+                inventory: "In Stock",
+                specs: [
+                    "Type: Ceramic",
+                    "Low Noise and Dust",
+                    "Excellent Heat Dissipation",
+                    "Long Service Life",
+                    "OE Quality Standards"
+                ]
+            },
+            {
+                id: 5,
+                name: "Performance Air Filter",
+                category: "Engine Parts",
+                price: 2499,
+                originalPrice: 3199,
+                rating: 5,
+                reviews: 88,
+                image: "https://www.mishimoto.eu/media/catalog/category/air-filter-category.jpg",
+                description: "High-flow air filter for increased horsepower and fuel efficiency. This reusable air filter is designed to maximize airflow while providing superior filtration.",
+                inventory: "In Stock",
+                specs: [
+                    "Type: High-flow Air Filter",
+                    "Material: Cotton Gauze",
+                    "Reusable and Washable",
+                    "Increased Airflow: Up to 50%",
+                    "Filtration Efficiency: 99%"
+                ]
+            },
+            {
+                id: 6,
+                name: "Premium Car Care Kit",
+                category: "Maintenance",
+                price: 3999,
+                originalPrice: 4599,
+                rating: 4,
+                reviews: 64,
+                image: "https://cardhobi.co.in/cdn/shop/files/Artboard_2_0a007ca9-0c94-43c2-b21f-b497c3468f56.png?v=1756458744",
+                description: "Complete kit for maintaining your car's appearance. This comprehensive kit includes everything you need to keep your vehicle looking showroom fresh.",
+                inventory: "Out of Stock",
+                specs: [
+                    "Includes: Shampoo, Wax, Tire Shine",
+                    "Microfiber Towels: 2 pieces",
+                    "Wash Mitt: 1 piece",
+                    "Interior Cleaner: 500ml",
+                    "Glass Cleaner: 500ml"
+                ]
+            },
+            {
+                id: 7,
+                name: "LED Headlight Bulbs",
+                category: "Lighting",
+                price: 4999,
+                originalPrice: 5999,
+                rating: 4.5,
+                reviews: 92,
+                image: "https://m.media-amazon.com/images/I/61lQ1D8uS-L.jpg",
+                description: "High-performance LED headlight bulbs for improved visibility. These bulbs provide bright, white light that enhances nighttime driving safety.",
+                inventory: "In Stock",
+                specs: [
+                    "Brightness: 6000K",
+                    "Power: 35W per bulb",
+                    "Lifespan: 30,000 hours",
+                    "Plug and Play Installation",
+                    "DOT & SAE Compliant"
+                ]
+            },
+            {
+                id: 8,
+                name: "Car Phone Mount",
+                category: "Interior Accessories",
+                price: 1299,
+                originalPrice: null,
+                rating: 4,
+                reviews: 56,
+                image: "https://m.media-amazon.com/images/I/61nKx5l3-5L.jpg",
+                description: "Adjustable car phone mount with secure grip. This mount holds your phone firmly in place while driving, allowing for hands-free operation.",
+                inventory: "In Stock",
+                specs: [
+                    "Compatibility: 4-6.5 inch phones",
+                    "Mount Type: Dashboard/Windshield",
+                    "Adjustable Angles: 360° rotation",
+                    "Material: ABS Plastic & Silicone",
+                    "Easy Installation"
+                ]
+            },
+            {
+                id: 9,
+                name: "Car Cover",
+                category: "Exterior Accessories",
+                price: 3499,
+                originalPrice: 4299,
+                rating: 4.5,
+                reviews: 78,
+                image: "https://m.media-amazon.com/images/I/71K6t5l4Q-L.jpg",
+                description: "All-weather car cover for complete protection. This cover shields your vehicle from rain, snow, dust, and UV rays.",
+                inventory: "In Stock",
+                specs: [
+                    "Material: Polyester with PU Coating",
+                    "Waterproof and UV Resistant",
+                    "Elastic Hem for Secure Fit",
+                    "Includes Storage Bag",
+                    "Sizes: Available for all car models"
+                ]
+            },
+            {
+                id: 10,
+                name: "Tire Pressure Monitoring System",
+                category: "Electrical Parts",
+                price: 5999,
+                originalPrice: 7999,
+                rating: 4,
+                reviews: 63,
+                image: "https://m.media-amazon.com/images/I/61fJ2+9l6-L.jpg",
+                description: "Wireless tire pressure monitoring system for real-time monitoring. This system alerts you to low tire pressure, improving safety and fuel efficiency.",
+                inventory: "In Stock",
+                specs: [
+                    "Display: LCD Screen",
+                    "Sensors: 4 External Sensors",
+                    "Pressure Range: 0-50 PSI",
+                    "Temperature Range: -40°C to 125°C",
+                    "Battery Life: 2 years"
+                ]
+            },
+            {
+                id: 11,
+                name: "Car Vacuum Cleaner",
+                category: "Maintenance",
+                price: 2999,
+                originalPrice: 3999,
+                rating: 4.5,
+                reviews: 105,
+                image: "https://m.media-amazon.com/images/I/61fK6t5l4Q-L.jpg",
+                description: "Portable car vacuum cleaner with strong suction. This compact vacuum is perfect for cleaning your car's interior, including hard-to-reach areas.",
+                inventory: "In Stock",
+                specs: [
+                    "Power: 106W",
+                    "Battery: 2000mAh Li-ion",
+                    "Runtime: 20-30 minutes",
+                    "Attachments: Crevice Tool, Brush",
+                    "Filter: Washable HEPA Filter"
+                ]
+            },
+            {
+                id: 12,
+                name: "Car Air Freshener",
+                category: "Interior Accessories",
+                price: 499,
+                originalPrice: null,
+                rating: 3.5,
+                reviews: 42,
+                image: "https://m.media-amazon.com/images/I/61fK6t5l4Q-L.jpg",
+                description: "Long-lasting car air freshener with natural scents. This air freshener eliminates odors and leaves your car smelling fresh for weeks.",
+                inventory: "In Stock",
+                specs: [
+                    "Scent: Ocean Breeze",
+                    "Duration: Up to 60 days",
+                    "Type: Gel-based",
+                    "Non-toxic and Allergen-free",
+                    "Easy to Install"
+                ]
+            }
+        ];
+
+        // State management
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+        let compare = JSON.parse(localStorage.getItem('compare')) || [];
+        let filteredProducts = [...products];
+        let currentProduct = null;
+
+        // DOM elements
+        const productsGrid = document.getElementById('productsGrid');
+        const cartSidebar = document.getElementById('cartSidebar');
+        const wishlistSidebar = document.getElementById('wishlistSidebar');
+        const quickViewModal = document.getElementById('quickViewModal');
+        const compareModal = document.getElementById('compareModal');
+        const overlay = document.getElementById('overlay');
+        const toast = document.getElementById('toast');
+        const backToTop = document.getElementById('backToTop');
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            renderProducts();
+            updateCartUI();
+            updateWishlistUI();
+            updateCompareUI();
+            setupEventListeners();
+        });
+
+        // Setup event listeners
+        function setupEventListeners() {
+            // Cart icon
+            document.getElementById('cartIcon').addEventListener('click', openCart);
+            document.getElementById('closeCart').addEventListener('click', closeCart);
+            
+            // Wishlist icon
+            document.getElementById('wishlistIcon').addEventListener('click', openWishlist);
+            document.getElementById('closeWishlist').addEventListener('click', closeWishlist);
+            
+            // Compare icon
+            document.getElementById('compareIcon').addEventListener('click', openCompare);
+            document.getElementById('closeCompare').addEventListener('click', closeCompare);
+            
+            // Quick view modal
+            document.getElementById('closeModal').addEventListener('click', closeQuickView);
+            
+            // Overlay
+            overlay.addEventListener('click', closeAllPanels);
+            
+            // Search
+            document.getElementById('searchBtn').addEventListener('click', searchProducts);
+            document.getElementById('searchInput').addEventListener('keyup', function(e) {
+                if (e.key === 'Enter') searchProducts();
+            });
+            
+            // Filters
+            document.getElementById('applyFilters').addEventListener('click', applyFilters);
+            
+            // Sort
+            document.getElementById('sortSelect').addEventListener('change', sortProducts);
+            
+            // Price range
+            document.getElementById('priceRange').addEventListener('input', function() {
+                document.getElementById('maxPrice').value = this.value;
+            });
+            
+            document.getElementById('minPrice').addEventListener('input', function() {
+                if (parseInt(this.value) > parseInt(document.getElementById('maxPrice').value)) {
+                    document.getElementById('maxPrice').value = this.value;
+                }
+                document.getElementById('priceRange').value = this.value;
+            });
+            
+            document.getElementById('maxPrice').addEventListener('input', function() {
+                if (parseInt(this.value) < parseInt(document.getElementById('minPrice').value)) {
+                    document.getElementById('minPrice').value = this.value;
+                }
+                document.getElementById('priceRange').value = this.value;
+            });
+            
+            // Quick view modal actions
+            document.getElementById('decreaseQty').addEventListener('click', function() {
+                const qtyInput = document.getElementById('productQty');
+                if (qtyInput.value > 1) {
+                    qtyInput.value = parseInt(qtyInput.value) - 1;
+                }
+            });
+            
+            document.getElementById('increaseQty').addEventListener('click', function() {
+                const qtyInput = document.getElementById('productQty');
+                qtyInput.value = parseInt(qtyInput.value) + 1;
+            });
+            
+            document.getElementById('modalAddToCart').addEventListener('click', function() {
+                if (currentProduct) {
+                    const qty = parseInt(document.getElementById('productQty').value);
+                    addToCart(currentProduct, qty);
+                    closeQuickView();
+                }
+            });
+            
+            document.getElementById('modalAddToWishlist').addEventListener('click', function() {
+                if (currentProduct) {
+                    addToWishlist(currentProduct);
+                    closeQuickView();
+                }
+            });
+            
+            document.getElementById('modalAddToCompare').addEventListener('click', function() {
+                if (currentProduct) {
+                    addToCompare(currentProduct);
+                    closeQuickView();
+                }
+            });
+            
+            // Checkout button
+            document.getElementById('checkoutBtn').addEventListener('click', function() {
+                if (cart.length > 0) {
+                    showToast('Proceeding to checkout...');
+                    // In a real application, this would redirect to a checkout page
+                } else {
+                    showToast('Your cart is empty!');
+                }
+            });
+            
+            // Back to top button
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTop.classList.add('show');
+                } else {
+                    backToTop.classList.remove('show');
+                }
+            });
+            
+            backToTop.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+
+        // Render products
+        function renderProducts() {
+            productsGrid.innerHTML = '';
+            
+            filteredProducts.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = 'product-card';
+                productCard.dataset.id = product.id;
+                
+                const discount = product.originalPrice ? 
+                    Math.round((1 - product.price / product.originalPrice) * 100) : 0;
+                
+                productCard.innerHTML = `
+                    <div class="product-image">
+                        <img src="${product.image}" alt="${product.name}">
+                        <div class="product-badges">
+                            ${product.inventory === 'New' ? '<span class="product-badge badge-new">New</span>' : ''}
+                            ${discount > 0 ? `<span class="product-badge badge-sale">${discount}% off</span>` : ''}
+                            ${product.rating === 5 ? '<span class="product-badge badge-hot">Hot</span>' : ''}
+                        </div>
+                        <div class="product-actions">
+                            <button class="action-btn quick-view-btn" data-id="${product.id}">
+                                <i class="bi bi-eye"></i>
+                            </button>
+                            <button class="action-btn wishlist-btn ${wishlist.some(item => item.id === product.id) ? 'active' : ''}" data-id="${product.id}">
+                                <i class="bi bi-heart"></i>
+                            </button>
+                            <button class="action-btn compare-btn ${compare.some(item => item.id === product.id) ? 'active' : ''}" data-id="${product.id}">
+                                <i class="bi bi-arrow-left-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">${product.category}</div>
+                        <h3 class="product-name">${product.name}</h3>
+                        <div class="product-rating">
+                            ${generateStars(product.rating)}
+                            <span>(${product.reviews})</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">₹${product.price.toLocaleString()}</span>
+                            ${product.originalPrice ? `<span class="original-price">₹${product.originalPrice.toLocaleString()}</span>` : ''}
+                            ${discount > 0 ? `<span class="discount">${discount}% off</span>` : ''}
+                        </div>
+                        <div class="product-buttons">
+                            <button class="add-to-cart-btn" data-id="${product.id}" ${product.inventory === 'Out of Stock' ? 'disabled' : ''}>
+                                ${product.inventory === 'Out of Stock' ? 'Out of Stock' : 'Add to Cart'}
+                            </button>
+                        </div>
+                    </div>
+                `;
+                
+                productsGrid.appendChild(productCard);
+            });
+            
+            // Add event listeners to product cards
+            document.querySelectorAll('.quick-view-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const productId = parseInt(this.dataset.id);
+                    openQuickView(productId);
+                });
+            });
+            
+            document.querySelectorAll('.wishlist-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const productId = parseInt(this.dataset.id);
+                    const product = products.find(p => p.id === productId);
+                    if (product) {
+                        if (this.classList.contains('active')) {
+                            removeFromWishlist(productId);
+                            this.classList.remove('active');
+                        } else {
+                            addToWishlist(product);
+                            this.classList.add('active');
+                        }
+                    }
+                });
+            });
+            
+            document.querySelectorAll('.compare-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const productId = parseInt(this.dataset.id);
+                    const product = products.find(p => p.id === productId);
+                    if (product) {
+                        if (this.classList.contains('active')) {
+                            removeFromCompare(productId);
+                            this.classList.remove('active');
+                        } else {
+                            addToCompare(product);
+                            this.classList.add('active');
+                        }
+                    }
+                });
+            });
+            
+            document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    if (!this.disabled) {
+                        const productId = parseInt(this.dataset.id);
+                        const product = products.find(p => p.id === productId);
+                        if (product) {
+                            addToCart(product, 1);
+                            
+                            // Visual feedback
+                            this.innerHTML = '<i class="bi bi-check"></i> Added';
+                            this.style.background = 'var(--accent)';
+                            this.style.color = 'var(--primary)';
+                            
+                            setTimeout(() => {
+                                this.innerHTML = 'Add to Cart';
+                                this.style.background = '';
+                                this.style.color = '';
+                            }, 2000);
+                        }
+                    }
+                });
+            });
+            
+            // Update product count
+            document.querySelector('.products-count').textContent = 
+                `Showing 1-${filteredProducts.length} of ${filteredProducts.length} products`;
+        }
+
+        // Generate star rating HTML
+        function generateStars(rating) {
+            let stars = '';
+            const fullStars = Math.floor(rating);
+            const hasHalfStar = rating % 1 >= 0.5;
+            
+            for (let i = 0; i < fullStars; i++) {
+                stars += '<i class="bi bi-star-fill"></i>';
+            }
+            
+            if (hasHalfStar) {
+                stars += '<i class="bi bi-star-half"></i>';
+            }
+            
+            const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
+            for (let i = 0; i < emptyStars; i++) {
+                stars += '<i class="bi bi-star"></i>';
+            }
+            
+            return stars;
+        }
+
+        // Search products
+        function searchProducts() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase().trim();
+            
+            if (!searchTerm) {
+                filteredProducts = [...products];
+            } else {
+                filteredProducts = products.filter(product => 
+                    product.name.toLowerCase().includes(searchTerm) ||
+                    product.category.toLowerCase().includes(searchTerm) ||
+                    product.description.toLowerCase().includes(searchTerm)
+                );
+            }
+            
+            renderProducts();
+        }
+
+        // Apply filters
+        function applyFilters() {
+            const selectedCategories = Array.from(document.querySelectorAll('.filter-options input[type="checkbox"]:checked'))
+                .map(cb => cb.value);
+            
+            const minPrice = parseInt(document.getElementById('minPrice').value) || 0;
+            const maxPrice = parseInt(document.getElementById('maxPrice').value) || 100000;
+            
+            filteredProducts = products.filter(product => {
+                // Category filter
+                if (selectedCategories.length > 0 && !selectedCategories.includes(product.category.toLowerCase())) {
+                    return false;
+                }
+                
+                // Price filter
+                if (product.price < minPrice || product.price > maxPrice) {
+                    return false;
+                }
+                
+                return true;
+            });
+            
+            renderProducts();
+        }
+
+        // Sort products
+        function sortProducts() {
+            const sortBy = document.getElementById('sortSelect').value;
+            
+            switch (sortBy) {
+                case 'price-low':
+                    filteredProducts.sort((a, b) => a.price - b.price);
+                    break;
+                case 'price-high':
+                    filteredProducts.sort((a, b) => b.price - a.price);
+                    break;
+                case 'rating':
+                    filteredProducts.sort((a, b) => b.rating - a.rating);
+                    break;
+                case 'newest':
+                    filteredProducts.sort((a, b) => b.id - a.id);
+                    break;
+                default:
+                    filteredProducts = [...products];
+            }
+            
+            renderProducts();
+        }
+
+        // Cart functions
+        function openCart() {
+            cartSidebar.classList.add('open');
+            overlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeCart() {
+            cartSidebar.classList.remove('open');
+            overlay.classList.remove('open');
+            document.body.style.overflow = 'auto';
+        }
+
+        function addToCart(product, quantity) {
+            const existingItem = cart.find(item => item.id === product.id);
+            
+            if (existingItem) {
+                existingItem.quantity += quantity;
+            } else {
+                cart.push({
+                    ...product,
+                    quantity: quantity
+                });
+            }
+            
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartUI();
+            showToast(`${product.name} added to cart`);
+        }
+
+        function updateCartUI() {
+            const cartItems = document.getElementById('cartItems');
+            const cartCount = document.getElementById('cartCount');
+            const cartTotal = document.getElementById('cartTotal');
+            
+            // Update cart count
+            const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+            cartCount.textContent = totalItems;
+            
+            // Update cart items
+            if (cart.length === 0) {
+                cartItems.innerHTML = `
+                    <div class="empty-cart">
+                        <i class="bi bi-cart-x"></i>
+                        <p>Your cart is empty</p>
+                    </div>
+                `;
+                cartTotal.textContent = '₹0.00';
+                return;
+            }
+            
+            let cartHTML = '';
+            let total = 0;
+            
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+                
+                cartHTML += `
+                    <div class="cart-item">
+                        <div class="cart-item-image">
+                            <img src="${item.image}" alt="${item.name}">
+                        </div>
+                        <div class="cart-item-details">
+                            <div class="cart-item-name">${item.name}</div>
+                            <div class="cart-item-price">₹${item.price.toLocaleString()}</div>
+                            <div class="cart-item-quantity">
+                                <button class="quantity-btn decrease-qty" data-id="${item.id}">-</button>
+                                <input type="number" class="quantity-input" value="${item.quantity}" min="1" data-id="${item.id}">
+                                <button class="quantity-btn increase-qty" data-id="${item.id}">+</button>
+                                <button class="remove-item" data-id="${item.id}">&times;</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            cartItems.innerHTML = cartHTML;
+            cartTotal.textContent = `₹${total.toLocaleString()}`;
+            
+            // Add event listeners to cart items
+            document.querySelectorAll('.decrease-qty').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const productId = parseInt(this.dataset.id);
+                    const item = cart.find(item => item.id === productId);
+                    if (item && item.quantity > 1) {
+                        item.quantity--;
+                        localStorage.setItem('cart', JSON.stringify(cart));
+                        updateCartUI();
+                    }
+                });
+            });
+            
+            document.querySelectorAll('.increase-qty').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const productId = parseInt(this.dataset.id);
+                    const item = cart.find(item => item.id === productId);
+                    if (item) {
+                        item.quantity++;
+                        localStorage.setItem('cart', JSON.stringify(cart));
+                        updateCartUI();
+                    }
+                });
+            });
+            
+            document.querySelectorAll('.quantity-input').forEach(input => {
+                input.addEventListener('change', function() {
+                    const productId = parseInt(this.dataset.id);
+                    const newQuantity = parseInt(this.value);
+                    const item = cart.find(item => item.id === productId);
+                    
+                    if (item && newQuantity > 0) {
+                        item.quantity = newQuantity;
+                        localStorage.setItem('cart', JSON.stringify(cart));
+                        updateCartUI();
+                    } else {
+                        this.value = item ? item.quantity : 1;
+                    }
+                });
+            });
+            
+            document.querySelectorAll('.remove-item').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const productId = parseInt(this.dataset.id);
+                    removeFromCart(productId);
+                });
+            });
+        }
+
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.id !== productId);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartUI();
+            showToast('Product removed from cart');
+        }
+
+        // Wishlist functions
+        function openWishlist() {
+            wishlistSidebar.classList.add('open');
+            overlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeWishlist() {
+            wishlistSidebar.classList.remove('open');
+            overlay.classList.remove('open');
+            document.body.style.overflow = 'auto';
+        }
+
+        function addToWishlist(product) {
+            if (!wishlist.some(item => item.id === product.id)) {
+                wishlist.push(product);
+                localStorage.setItem('wishlist', JSON.stringify(wishlist));
+                updateWishlistUI();
+                showToast(`${product.name} added to wishlist`);
+            } else {
+                showToast('Product already in wishlist');
+            }
+        }
+
+        function updateWishlistUI() {
+            const wishlistItems = document.getElementById('wishlistItems');
+            const wishlistCount = document.getElementById('wishlistCount');
+            
+            // Update wishlist count
+            wishlistCount.textContent = wishlist.length;
+            
+            // Update wishlist items
+            if (wishlist.length === 0) {
+                wishlistItems.innerHTML = `
+                    <div class="empty-wishlist">
+                        <i class="bi bi-heart"></i>
+                        <p>Your wishlist is empty</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            let wishlistHTML = '';
+            
+            wishlist.forEach(item => {
+                wishlistHTML += `
+                    <div class="wishlist-item">
+                        <div class="wishlist-item-image">
+                            <img src="${item.image}" alt="${item.name}">
+                        </div>
+                        <div class="wishlist-item-details">
+                            <div class="wishlist-item-name">${item.name}</div>
+                            <div class="wishlist-item-price">₹${item.price.toLocaleString()}</div>
+                            <div class="wishlist-item-actions">
+                                <button class="add-to-cart-from-wishlist" data-id="${item.id}">Add to Cart</button>
+                                <button class="remove-from-wishlist" data-id="${item.id}">Remove</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            wishlistItems.innerHTML = wishlistHTML;
+            
+            // Add event listeners to wishlist items
+            document.querySelectorAll('.add-to-cart-from-wishlist').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const productId = parseInt(this.dataset.id);
+                    const product = products.find(p => p.id === productId);
+                    if (product) {
+                        addToCart(product, 1);
+                    }
+                });
+            });
+            
+            document.querySelectorAll('.remove-from-wishlist').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const productId = parseInt(this.dataset.id);
+                    removeFromWishlist(productId);
+                });
+            });
+        }
+
+        function removeFromWishlist(productId) {
+            wishlist = wishlist.filter(item => item.id !== productId);
+            localStorage.setItem('wishlist', JSON.stringify(wishlist));
+            updateWishlistUI();
+            
+            // Update wishlist button on product card
+            const wishlistBtn = document.querySelector(`.wishlist-btn[data-id="${productId}"]`);
+            if (wishlistBtn) {
+                wishlistBtn.classList.remove('active');
+            }
+            
+            showToast('Product removed from wishlist');
+        }
+
+        // Compare functions
+        function openCompare() {
+            compareModal.classList.add('open');
+            overlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+            updateCompareUI();
+        }
+
+        function closeCompare() {
+            compareModal.classList.remove('open');
+            overlay.classList.remove('open');
+            document.body.style.overflow = 'auto';
+        }
+
+        function addToCompare(product) {
+            if (compare.length >= 3) {
+                showToast('You can compare up to 3 products at a time');
+                return;
+            }
+            
+            if (!compare.some(item => item.id === product.id)) {
+                compare.push(product);
+                localStorage.setItem('compare', JSON.stringify(compare));
+                updateCompareUI();
+                showToast(`${product.name} added to compare`);
+            } else {
+                showToast('Product already in compare list');
+            }
+        }
+
+        function updateCompareUI() {
+            const compareCount = document.getElementById('compareCount');
+            const compareContent = document.getElementById('compareContent');
+            
+            // Update compare count
+            compareCount.textContent = compare.length;
+            
+            // Update compare content
+            if (compare.length === 0) {
+                compareContent.innerHTML = `
+                    <div class="compare-empty">
+                        <i class="bi bi-arrow-left-right"></i>
+                        <p>No products selected for comparison</p>
+                        <p>Add up to 3 products to compare</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            // Create comparison table
+            let compareHTML = `
+                <table class="compare-table">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+            `;
+            
+            compare.forEach(product => {
+                compareHTML += `
+                    <th class="compare-product">
+                        <img src="${product.image}" alt="${product.name}">
+                        <h4>${product.name}</h4>
+                        <div class="price">₹${product.price.toLocaleString()}</div>
+                        <button class="remove-compare" data-id="${product.id}">&times;</button>
+                    </th>
+                `;
+            });
+            
+            compareHTML += `
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Price</td>
+            `;
+            
+            compare.forEach(product => {
+                compareHTML += `<td>₹${product.price.toLocaleString()}</td>`;
+            });
+            
+            compareHTML += `
+                        </tr>
+                        <tr>
+                            <td>Category</td>
+            `;
+            
+            compare.forEach(product => {
+                compareHTML += `<td>${product.category}</td>`;
+            });
+            
+            compareHTML += `
+                        </tr>
+                        <tr>
+                            <td>Rating</td>
+            `;
+            
+            compare.forEach(product => {
+                compareHTML += `<td>${generateStars(product.rating)} (${product.reviews})</td>`;
+            });
+            
+            compareHTML += `
+                        </tr>
+                        <tr>
+                            <td>Availability</td>
+            `;
+            
+            compare.forEach(product => {
+                compareHTML += `<td>${product.inventory}</td>`;
+            });
+            
+            compareHTML += `
+                        </tr>
+                        <tr>
+                            <td>Description</td>
+            `;
+            
+            compare.forEach(product => {
+                compareHTML += `<td>${product.description.substring(0, 100)}...</td>`;
+            });
+            
+            compareHTML += `
+                        </tr>
+                        <tr>
+                            <td>Specifications</td>
+            `;
+            
+            compare.forEach(product => {
+                compareHTML += `<td><ul>${product.specs.map(spec => `<li>${spec}</li>`).join('')}</ul></td>`;
+            });
+            
+            compareHTML += `
+                        </tr>
+                        <tr>
+                            <td>Actions</td>
+            `;
+            
+            compare.forEach(product => {
+                compareHTML += `
+                    <td>
+                        <button class="modal-action-btn" onclick="addToCartFromCompare(${product.id})">
+                            <i class="bi bi-cart"></i> Add to Cart
+                        </button>
+                        <button class="modal-action-btn" onclick="removeFromCompare(${product.id})">
+                            <i class="bi bi-trash"></i> Remove
+                        </button>
+                    </td>
+                `;
+            });
+            
+            compareHTML += `
+                        </tr>
+                    </tbody>
+                </table>
+            `;
+            
+            compareContent.innerHTML = compareHTML;
+            
+            // Add event listeners to remove buttons
+            document.querySelectorAll('.remove-compare').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const productId = parseInt(this.dataset.id);
+                    removeFromCompare(productId);
+                });
+            });
+        }
+
+        function removeFromCompare(productId) {
+            compare = compare.filter(item => item.id !== productId);
+            localStorage.setItem('compare', JSON.stringify(compare));
+            updateCompareUI();
+            
+            // Update compare button on product card
+            const compareBtn = document.querySelector(`.compare-btn[data-id="${productId}"]`);
+            if (compareBtn) {
+                compareBtn.classList.remove('active');
+            }
+            
+            showToast('Product removed from compare');
+        }
+
+        // Global function for adding to cart from compare modal
+        window.addToCartFromCompare = function(productId) {
+            const product = products.find(p => p.id === productId);
+            if (product) {
+                addToCart(product, 1);
+            }
+        };
+
+        // Quick view functions
+        function openQuickView(productId) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+            
+            currentProduct = product;
+            
+            // Set modal content
+            document.getElementById('modalImage').src = product.image;
+            document.getElementById('modalCategory').textContent = product.category;
+            document.getElementById('modalTitle').textContent = product.name;
+            document.getElementById('modalCurrentPrice').textContent = `₹${product.price.toLocaleString()}`;
+            
+            if (product.originalPrice) {
+                document.getElementById('modalOriginalPrice').textContent = `₹${product.originalPrice.toLocaleString()}`;
+                const discount = Math.round((1 - product.price / product.originalPrice) * 100);
+                document.getElementById('modalDiscount').textContent = `${discount}% off`;
+            } else {
+                document.getElementById('modalOriginalPrice').textContent = '';
+                document.getElementById('modalDiscount').textContent = '';
+            }
+            
+            document.getElementById('modalRating').innerHTML = `
+                ${generateStars(product.rating)}
+                <span>(${product.reviews})</span>
+            `;
+            
+            const inventoryElement = document.getElementById('modalInventory');
+            inventoryElement.textContent = product.inventory;
+            inventoryElement.className = 'inventory-status ';
+            
+            if (product.inventory === 'In Stock') {
+                inventoryElement.classList.add('in-stock');
+            } else if (product.inventory === 'Low Stock') {
+                inventoryElement.classList.add('low-stock');
+            } else {
+                inventoryElement.classList.add('out-of-stock');
+            }
+            
+            document.getElementById('modalDescription').textContent = product.description;
+            
+            // Add specifications
+            const specsList = document.getElementById('modalSpecs');
+            specsList.innerHTML = '';
+            product.specs.forEach(spec => {
+                const li = document.createElement('li');
+                li.textContent = spec;
+                specsList.appendChild(li);
+            });
+            
+            // Reset quantity
+            document.getElementById('productQty').value = '1';
+            
+            // Update wishlist and compare buttons
+            const wishlistBtn = document.getElementById('modalAddToWishlist');
+            if (wishlist.some(item => item.id === product.id)) {
+                wishlistBtn.innerHTML = '<i class="bi bi-heart-fill"></i> In Wishlist';
+            } else {
+                wishlistBtn.innerHTML = '<i class="bi bi-heart"></i> Wishlist';
+            }
+            
+            const compareBtn = document.getElementById('modalAddToCompare');
+            if (compare.some(item => item.id === product.id)) {
+                compareBtn.innerHTML = '<i class="bi bi-arrow-left-right"></i> In Compare';
+            } else {
+                compareBtn.innerHTML = '<i class="bi bi-arrow-left-right"></i> Compare';
+            }
+            
+            // Show modal
+            quickViewModal.classList.add('open');
+            overlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeQuickView() {
+            quickViewModal.classList.remove('open');
+            overlay.classList.remove('open');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close all panels
+        function closeAllPanels() {
+            closeCart();
+            closeWishlist();
+            closeQuickView();
+            closeCompare();
+        }
+
+        // Show toast notification
+        function showToast(message) {
+            const toastElement = document.getElementById('toast');
+            const toastMessage = document.getElementById('toastMessage');
+            
+            toastMessage.textContent = message;
+            toastElement.classList.add('show');
+            
+            setTimeout(() => {
+                toastElement.classList.remove('show');
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

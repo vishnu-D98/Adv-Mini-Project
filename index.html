@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarX - Premium Automotive Experience</title>
+    <link rel="stylesheet" href="styles/style.css">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <style>
+       /* if needed */
+    </style>
+</head>
+<body>
+    <!-- Promo Bar -->
+    <div class="promo-bar">
+        <span>Free shipping on orders over $100 | Limited time offer</span>
+        <button type="button" class="btn-close" aria-label="Close"></button>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="#">CarX</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" ></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="shop.html">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Installation-Services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="learn.html">Learn</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Enhanced Carousel -->
+    <div class="enhanced-carousel">
+        <div class="list">
+            <div class="item" style="background-image: url(https://images.unsplash.com/photo-1532581140115-3e355d1ed1de?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);">
+                <div class="content">
+                    <div class="title">Premium</div>
+                    <div class="name">Car Care</div>
+                    <div class="tagline">Experience the Future of Automotive Excellence</div>
+                    <div class="des">Keep your car looking brand new with our premium care products.</div>
+                    <div class="btn">
+                        <a href="#featured-collection"> <button>View Cars</button> </a>
+                        <a href="#brand-intro"> <button>Learn More</button> </a>
+                    </div>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);">
+                <div class="content">
+                    <div class="title">Interior</div>
+                    <div class="name">Accessories</div>
+                    <div class="tagline">Innovative Design Meets Unmatched Quality</div>
+                    <div class="des">Upgrade your car's interior with our luxury accessories.</div>
+                    <div class="btn">
+                        <a href="#featured-collection"> <button>View Cars</button> </a>
+                        <a href="#brand-intro"> <button>Learn More</button> </a>
+                    </div>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(https://images.unsplash.com/photo-1689826493949-5e5824a5474e?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);">
+                <div class="content">
+                    <div class="title">Performance</div>
+                    <div class="name">Upgrades</div>
+                    <div class="tagline">Engineered for the Driving Enthusiast</div>
+                    <div class="des">Enhance your car's performance with our premium parts.</div>
+                    <div class="btn">
+                        <a href="#featured-collection"> <button>View Cars</button> </a>
+                        <a href="#brand-intro"> <button>Learn More</button> </a>
+                    </div>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(https://images.unsplash.com/photo-1626419836588-540d7fadacbd?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);">
+                <div class="content">
+                    <div class="title">Exterior</div>
+                    <div class="name">Styling</div>
+                    <div class="tagline">Transform Your Vehicle's Presence</div>
+                    <div class="des">Make your car stand out with our exterior styling parts.</div>
+                    <div class="btn">
+                        <a href="#featured-collection"> <button>View Cars</button> </a>
+                        <a href="#brand-intro"> <button>Learn More</button> </a>
+                    </div>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(https://images.unsplash.com/photo-1566008885218-90abf9200ddb?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);">
+                <div class="content">
+                    <div class="title">Wheels</div>
+                    <div class="name">& Tires</div>
+                    <div class="tagline">Precision Engineering for Superior Performance</div>
+                    <div class="des">Complete your look with our premium wheels and tires.</div>
+                    <div class="btn">
+                        <a href="#featured-collection"> <button>View Cars</button> </a>
+                        <a href="#brand-intro"> <button>Learn More</button> </a>
+                    </div>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(https://images.unsplash.com/photo-1584809394311-364392a5011b?q=80&w=1247&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);">
+                <div class="content">
+                    <div class="title">Luxury</div>
+                    <div class="name">Accessories</div>
+                    <div class="tagline">Elevate Every Journey</div>
+                    <div class="des">Elevate your driving experience with our luxury accessories.</div>
+                    <div class="btn">
+                        <a href="#featured-collection"> <button>View Cars</button> </a>
+                        <a href="#brand-intro"> <button>Learn More</button> </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Carousel Controls -->
+        <div class="arrows">
+            <button class="prev"><i class="bi bi-chevron-left"></i></button>
+            <button class="next"><i class="bi bi-chevron-right"></i></button>
+        </div>
+        <!-- Time Running Indicator -->
+        <div class="timeRunning"></div>
+    </div>
+
+    <!-- Brand Introduction Section -->
+    <section id="brand-intro" class="brand-intro">
+        <div class="container">
+            <div class="brand-intro-content">
+                <h2>Welcome to CarX</h2>
+                <p>At CarX, we're redefining the automotive experience by blending cutting-edge technology with timeless design. Our passion for excellence drives us to create products that not only enhance your vehicle's performance but also elevate your driving journey to new heights.</p>
+                <p>From premium car care to innovative accessories, every CarX product is meticulously crafted to meet the highest standards of quality and performance. We believe that your car is more than just a vehicle—it's an extension of your personality and lifestyle.</p>
+                <div class="cta-buttons">
+                    <a href="#featured-collection" class="cta-button cta-primary">View Cars</a>
+                    <a href="#features" class="cta-button cta-secondary">Discover More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Collection - Unique Design -->
+    <section id="featured-collection" class="featured-collection">
+        <div class="container">
+            <div class="section-title">
+                <h2>Featured Collection</h2>
+                <p>Discover our handpicked selection of premium automotive products</p>
+            </div>
+            <div class="collection-showcase">
+                <div class="collection-main">
+                    <img src="https://images.unsplash.com/photo-1708389683924-1685acff381f?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Aetherium Spectre">
+                    <div class="collection-overlay">
+                        <h3>Aetherium Spectre</h3>
+                        <p>Ultra-luxury electric sedan with autonomous driving capabilities</p>
+                        <button class="collection-view-btn" onclick="openProductModal('Aetherium Spectre')">
+                            <span>View Details</span>
+                            <i class="bi bi-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="collection-thumbnails">
+                    <div class="collection-thumb">
+                        <img src="https://images.unsplash.com/photo-1614393889816-89c1570ff1e1?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Vortex GT">
+                        <div class="collection-thumb-overlay">
+                            <h4>Vortex GT</h4>
+                            <p>High-performance sports car</p>
+                            <button class="collection-thumb-btn" onclick="openProductModal('Vortex GT')">
+                                <i class="bi bi-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="collection-thumb">
+                        <img src="https://images.unsplash.com/photo-1649583747340-e1b026c71e59?q=80&w=1228&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Pinnacle SUV">
+                        <div class="collection-thumb-overlay">
+                            <h4>Pinnacle SUV</h4>
+                            <p>Luxury SUV with off-road capabilities</p>
+                            <button class="collection-thumb-btn" onclick="openProductModal('Pinnacle SUV')">
+                                <i class="bi bi-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="collection-thumb">
+                        <img src="https://images.unsplash.com/photo-1614393889816-89c1570ff1e1?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Nexus E1">
+                        <div class="collection-thumb-overlay">
+                            <h4>Nexus E1</h4>
+                            <p>All-electric hypercar</p>
+                            <button class="collection-thumb-btn" onclick="openProductModal('Nexus E1')">
+                                <i class="bi bi-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose CarX</h2>
+                <p>We're committed to delivering exceptional products that enhance your automotive experience</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <h3 class="feature-title">Premium Quality</h3>
+                        <p class="feature-desc">Every product is crafted with the finest materials and undergoes rigorous testing to ensure unmatched quality and durability.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="bi bi-lightning-charge-fill"></i>
+                        </div>
+                        <h3 class="feature-title">Innovative Design</h3>
+                        <p class="feature-desc">Our team of designers and engineers work together to create products that are both functional and aesthetically pleasing.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="bi bi-shield-check"></i>
+                        </div>
+                        <h3 class="feature-title">Customer Satisfaction</h3>
+                        <p class="feature-desc">We stand behind our products with comprehensive warranties and exceptional customer service.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Section -->
+    <section id="tech" class="tech-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Innovation at Its Core</h2>
+                <p>Discover the technology that powers our premium automotive products</p>
+            </div>
+            <div class="tech-content">
+                <div class="tech-img">
+                    <img src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Car Technology">
+                </div>
+                <div class="tech-text">
+                    <h3>Advanced Engineering</h3>
+                    <p>At CarX, we leverage cutting-edge technology to create products that push the boundaries of automotive innovation. Our research and development team is constantly exploring new materials, designs, and manufacturing processes to deliver unparalleled performance and reliability.</p>
+                    <ul class="tech-features">
+                        <li><i class="bi bi-check-circle-fill"></i> Proprietary composite materials for enhanced durability</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Aerodynamic design optimized for performance</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Smart integration with vehicle systems</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Sustainable manufacturing practices</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3D Flip Carousel Section -->
+    <section class="flip-carousel-container">
+        <div class="container">
+            <div class="flip-carousel-title">
+                <h2>Premium Collection</h2>
+            </div>
+            <div class="flip-carousel">
+                <div class="flip-carousel-inner">
+                    <!-- Car 1 -->
+                    <div class="flip-carousel-item flip-active">
+                        <div class="flip-carousel-card">
+                            <div class="flip-carousel-front">
+                                <div class="flip-carousel-img">
+                                    <img src="https://images.unsplash.com/photo-1708389683924-1685acff381f?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Aetherium Spectre">
+                                </div>
+                                <div class="flip-carousel-content">
+                                    <h3>Aetherium Spectre</h3>
+                                    <p>Ultra-luxury electric sedan with autonomous driving capabilities.</p>
+                                </div>
+                            </div>
+                            <div class="flip-carousel-back">
+                                <h3>Aetherium Spectre</h3>
+                                <p>The future of luxury mobility with zero emissions and unparalleled comfort.</p>
+                                <ul>
+                                    <li>620-mile range on single charge</li>
+                                    <li>0-60 mph in 2.8 seconds</li>
+                                    <li>AI-powered autonomous driving</li>
+                                    <li>Handcrafted interior with sustainable materials</li>
+                                </ul>
+                                <button class="btn" onclick="openProductModal('Aetherium Spectre')">
+                                    <i class="bi bi-eye"></i> View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Car 2 -->
+                    <div class="flip-carousel-item flip-next">
+                        <div class="flip-carousel-card">
+                            <div class="flip-carousel-front">
+                                <div class="flip-carousel-img">
+                                    <img src="https://images.unsplash.com/photo-1614393889816-89c1570ff1e1?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Vortex GT">
+                                </div>
+                                <div class="flip-carousel-content">
+                                    <h3>Vortex GT</h3>
+                                    <p>High-performance sports car with track-inspired engineering.</p>
+                                </div>
+                            </div>
+                            <div class="flip-carousel-back">
+                                <h3>Vortex GT</h3>
+                                <p>Experience adrenaline-pumping performance with precision handling.</p>
+                                <ul>
+                                    <li>Twin-turbo V8 engine with 720 HP</li>
+                                    <li>Carbon fiber body construction</li>
+                                    <li>Advanced aerodynamics package</li>
+                                    <li>Race-derived suspension system</li>
+                                </ul>
+                                <button class="btn" onclick="openProductModal('Vortex GT')">
+                                    <i class="bi bi-eye"></i> View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Car 3 -->
+                    <div class="flip-carousel-item flip-far-next">
+                        <div class="flip-carousel-card">
+                            <div class="flip-carousel-front">
+                                <div class="flip-carousel-img">
+                                    <img src="https://images.unsplash.com/photo-1649583747340-e1b026c71e59?q=80&w=1228&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Pinnacle SUV">
+                                </div>
+                                <div class="flip-carousel-content">
+                                    <h3>Pinnacle SUV</h3>
+                                    <p>Luxury SUV with exceptional off-road capabilities and premium comfort.</p>
+                                </div>
+                            </div>
+                            <div class="flip-carousel-back">
+                                <h3>Pinnacle SUV</h3>
+                                <p>Conquer any terrain without compromising on luxury and technology.</p>
+                                <ul>
+                                    <li>Adaptive air suspension with terrain response</li>
+                                    <li>Hand-stitched leather interior</li>
+                                    <li>23-speaker premium audio system</li>
+                                    <li>Advanced driver assistance systems</li>
+                                </ul>
+                                <button class="btn" onclick="openProductModal('Pinnacle SUV')">
+                                    <i class="bi bi-eye"></i> View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Car 4 -->
+                    <div class="flip-carousel-item flip-hidden">
+                        <div class="flip-carousel-card">
+                            <div class="flip-carousel-front">
+                                <div class="flip-carousel-img">
+                                    <img src="https://images.unsplash.com/photo-1614393889816-89c1570ff1e1?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Nexus E1">
+                                </div>
+                                <div class="flip-carousel-content">
+                                    <h3>Nexus E1</h3>
+                                    <p>All-electric hypercar with revolutionary performance and technology.</p>
+                                </div>
+                            </div>
+                            <div class="flip-carousel-back">
+                                <h3>Nexus E1</h3>
+                                <p>The pinnacle of electric performance with track-focused engineering.</p>
+                                <ul>
+                                    <li>1,100 HP quad-motor setup</li>
+                                    <li>0-60 mph in 1.9 seconds</li>
+                                    <li>Carbon-titanium monocoque chassis</li>
+                                    <li>Advanced torque vectoring system</li>
+                                </ul>
+                                <button class="btn" onclick="openProductModal('Nexus E1')">
+                                    <i class="bi bi-eye"></i> View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Car 5 -->
+                    <div class="flip-carousel-item flip-hidden">
+                        <div class="flip-carousel-card">
+                            <div class="flip-carousel-front">
+                                <div class="flip-carousel-img">
+                                    <img src="https://plus.unsplash.com/premium_photo-1694707175420-0b2b2cf628c0?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Celestial Coupe">
+                                </div>
+                                <div class="flip-carousel-content">
+                                    <h3>Celestial Coupe</h3>
+                                    <p>Grand tourer combining luxury, performance, and cutting-edge technology.</p>
+                                </div>
+                            </div>
+                            <div class="flip-carousel-back">
+                                <h3>Celestial Coupe</h3>
+                                <p>Experience the perfect balance of exhilarating performance and refined comfort.</p>
+                                <ul>
+                                    <li>Biturbo V12 engine with 680 HP</li>
+                                    <li>Active rear-wheel steering</li>
+                                    <li>Executive rear seating package</li>
+                                    <li>Night vision with animal detection</li>
+                                </ul>
+                                <button class="btn" onclick="openProductModal('Celestial Coupe')">
+                                    <i class="bi bi-eye"></i> View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Car 6 -->
+                    <div class="flip-carousel-item flip-prev">
+                        <div class="flip-carousel-card">
+                            <div class="flip-carousel-front">
+                                <div class="flip-carousel-img">
+                                    <img src="https://plus.unsplash.com/premium_photo-1693828619654-b0b924a4be47?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Quantum X">
+                                </div>
+                                <div class="flip-carousel-content">
+                                    <h3>Quantum X</h3>
+                                    <p>Futuristic concept car with autonomous capabilities and AI integration.</p>
+                                </div>
+                            </div>
+                            <div class="flip-carousel-back">
+                                <h3>Quantum X</h3>
+                                <p>The next generation of mobility, redefining the relationship between car and driver.</p>
+                                <ul>
+                                    <li>Level 4 autonomous driving</li>
+                                    <li>Biometric access and personalization</li>
+                                    <li>Self-healing exterior surface</li>
+                                    <li>Holographic augmented reality display</li>
+                                </ul>
+                                <button class="btn" onclick="openProductModal('Quantum X')">
+                                    <i class="bi bi-eye"></i> View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-carousel-controls">
+                <button class="flip-carousel-control flip-prev-btn">
+                    <i class="bi bi-chevron-left"></i>
+                </button>
+                <button class="flip-carousel-control flip-next-btn">
+                    <i class="bi bi-chevron-right"></i>
+                </button>
+            </div>
+            <div class="flip-carousel-indicators">
+                <div class="flip-carousel-indicator active" data-index="0"></div>
+                <div class="flip-carousel-indicator" data-index="1"></div>
+                <div class="flip-carousel-indicator" data-index="2"></div>
+                <div class="flip-carousel-indicator" data-index="3"></div>
+                <div class="flip-carousel-indicator" data-index="4"></div>
+                <div class="flip-carousel-indicator" data-index="5"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>What Our Customers Say</h2>
+                <p>Hear from automotive enthusiasts who have experienced the CarX difference</p>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            "CarX transformed my driving experience. The attention to detail and quality of their products is unmatched. I've never felt more connected to my vehicle."
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Customer" class="testimonial-img">
+                            <div class="testimonial-info">
+                                <h4>Michael Rodriguez</h4>
+                                <p>Automotive Enthusiast</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            "The performance upgrades I installed from CarX took my car to a whole new level. The difference in handling and power is incredible. Highly recommended!"
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Customer" class="testimonial-img">
+                            <div class="testimonial-info">
+                                <h4>Sarah Johnson</h4>
+                                <p>Professional Racer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            "As a car collector, I'm very particular about the products I use. CarX has exceeded my expectations in every way. Their luxury accessories are simply exceptional."
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Customer" class="testimonial-img">
+                            <div class="testimonial-info">
+                                <h4>David Chen</h4>
+                                <p>Luxury Car Collector</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="video-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Featured Video</h2>
+                <p>Experience the CarX difference in action</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-10 col-lg-8">
+                    <div class="ratio ratio-16x9 video-container">
+                        <iframe src="https://www.youtube.com/embed/NMThdHhrLoM?autoplay=1&mute=1&loop=1&playlist=NMThdHhrLoM&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8 text-center">
+                    <h2>Stay Updated With CarX</h2>
+                    <p>Subscribe to our newsletter to receive the latest updates on new products, exclusive offers, and automotive insights.</p>
+                    <form class="d-flex gap-2 justify-content-center">
+                        <input type="email" class="form-control form-control-lg" placeholder="Your email address" required>
+                        <button type="submit" class="btn btn-warning btn-lg">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer - New Design -->
+    <footer class="footer" id="contact">
+        <div class="footer-content">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <i class="bi bi-car-front-fill"></i>
+                        <h2>CarX</h2>
+                    </div>
+                    <p class="footer-description">
+                        CarX is redefining the automotive experience with premium products that combine cutting-edge technology, exceptional design, and uncompromising quality.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-twitter"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-youtube"></i></a>
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h5>Quick Links</h5>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#brand-intro">About Us</a></li>
+                            <li><a href="#featured-collection">Collection</a></li>
+                            <li><a href="#tech">Technology</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h5>Categories</h5>
+                        <ul>
+                            <li><a href="#">Exterior Accessories</a></li>
+                            <li><a href="#">Interior Upgrades</a></li>
+                            <li><a href="#">Performance Parts</a></li>
+                            <li><a href="#">Wheels & Tires</a></li>
+                            <li><a href="#">Car Care</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h5>Contact Us</h5>
+                        <div class="footer-contact">
+                            <div class="footer-contact-item">
+                                <i class="bi bi-geo-alt"></i>
+                                <span>123 Automotive Drive, CarX City, CC 12345</span>
+                            </div>
+                            <div class="footer-contact-item">
+                                <i class="bi bi-telephone"></i>
+                                <span>+1 (555) 123-4567</span>
+                            </div>
+                            <div class="footer-contact-item">
+                                <i class="bi bi-envelope"></i>
+                                <span>info@carx.com</span>
+                            </div>
+                        </div>
+                        
+                        <div class="footer-newsletter">
+                            <h5>Newsletter</h5>
+                            <p>Subscribe for exclusive offers and updates</p>
+                            <form class="footer-newsletter-form">
+                                <input type="email" placeholder="Your email">
+                                <button type="submit">Subscribe</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">FAQ</a>
+                    <a href="#">Careers</a>
+                </div>
+                <p class="footer-copyright">
+                    <i class="bi bi-c-circle"></i> 2023 CarX. All rights reserved.
+                </p>
+                <p style="font-size:13px;opacity:0.7;text-align:center">
+                This is a frontend UI mini-project created for learning purposes only.
+                No real user data is collected.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="bi bi-arrow-up"></i>
+    </div>
+
+    <!-- Product Modal -->
+    <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel">Product Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img id="modalProductImage" src="" alt="Product" class="img-fluid rounded">
+                        </div>
+                        <div class="col-md-6">
+                            <h3 id="modalProductName"></h3>
+                            <p id="modalProductDescription"></p>
+                            <h5>Specifications:</h5>
+                            <ul id="modalProductSpecs">
+                                <!-- Specifications will be populated dynamically -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script>
+       const nextBtn = document.querySelector('.enhanced-carousel .next');
+        const prevBtn = document.querySelector('.enhanced-carousel .prev');
+        const carousel = document.querySelector('.enhanced-carousel');
+        const list = document.querySelector('.enhanced-carousel .list');
+        const runningTime = document.querySelector('.enhanced-carousel .timeRunning');
+        let timeRunning = 3000;
+        let timeAutoNext = 7000;
+
+        // Initialize controls
+        if (nextBtn && prevBtn) {
+            nextBtn.onclick = () => showSlider('next');
+            prevBtn.onclick = () => showSlider('prev');
+        }
+
+        // Auto-rotate
+        let runNextAuto = setTimeout(() => {
+            if (nextBtn) nextBtn.click();
+        }, timeAutoNext);
+
+        function resetTimeAnimation() {
+            if (runningTime) {
+                runningTime.style.animation = 'none';
+                runningTime.offsetHeight; // Trigger reflow
+                runningTime.style.animation = null;
+                runningTime.style.animation = 'runningTime 7s linear 1 forwards';
+            }
+        }
+
+function showSlider(type) {
+    if (!list) return;
+    const sliderItemsDom = list.querySelectorAll('.enhanced-carousel .list .item');
+    
+    if (type === 'next') {
+        list.appendChild(sliderItemsDom[0]);
+        carousel.classList.add('next');
+    } else {
+        list.prepend(sliderItemsDom[sliderItemsDom.length - 1]);
+        carousel.classList.add('prev');
+    }
+
+    clearTimeout(runTimeOut);
+    runTimeOut = setTimeout(() => {
+        carousel.classList.remove('next');
+        carousel.classList.remove('prev');
+    }, timeRunning);
+
+    clearTimeout(runNextAuto);
+    runNextAuto = setTimeout(() => {
+        if (nextBtn) nextBtn.click();
+    }, timeAutoNext);
+
+    resetTimeAnimation(); // Reset timer
+}
+
+// Start animation
+resetTimeAnimation();
+
+document.addEventListener('DOMContentLoaded', function () {
+    const carouselItems = document.querySelectorAll('.flip-carousel-item');
+    const prevBtn = document.querySelector('.flip-prev-btn');
+    const nextBtn = document.querySelector('.flip-next-btn');
+    const indicators = document.querySelectorAll('.flip-carousel-indicator');
+    let currentIndex = 0;
+    const totalItems = carouselItems.length;
+
+    if (carouselItems.length === 0) return;
+
+    // Update carousel positions
+    function updateCarousel() {
+        carouselItems.forEach((item, index) => {
+            item.classList.remove('flip-active', 'flip-prev', 'flip-next', 'flip-far-prev', 'flip-far-next', 'flip-hidden');
+            
+            if (index === currentIndex) {
+                item.classList.add('flip-active');
+            } else if (index === (currentIndex + 1) % totalItems) {
+                item.classList.add('flip-next');
+            } else if (index === (currentIndex + 2) % totalItems) {
+                item.classList.add('flip-far-next');
+            } else if (index === (currentIndex - 1 + totalItems) % totalItems) {
+                item.classList.add('flip-prev');
+            } else if (index === (currentIndex - 2 + totalItems) % totalItems) {
+                item.classList.add('flip-far-prev');
+            } else {
+                item.classList.add('flip-hidden');
+            }
+        });
+
+        // Update indicators
+        indicators.forEach((indicator, index) => {
+            if (index === currentIndex) {
+                indicator.classList.add('active');
+            } else {
+                indicator.classList.remove('active');
+            }
+        });
+    }
+
+    // Next button
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % totalItems;
+            updateCarousel();
+        });
+    }
+
+    // Previous button
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+            updateCarousel();
+        });
+    }
+
+    // Indicator clicks
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => {
+            currentIndex = index;
+            updateCarousel();
+        });
+    });
+
+    // Auto-rotate
+    let autoRotate = setInterval(() => {
+        currentIndex = (currentIndex + 1) % totalItems;
+        updateCarousel();
+    }, 5000);
+
+    // Pause on hover
+    const carouselContainer = document.querySelector('.flip-carousel');
+    if (carouselContainer) {
+        carouselContainer.addEventListener('mouseenter', () => clearInterval(autoRotate));
+        carouselContainer.addEventListener('mouseleave', () => {
+            autoRotate = setInterval(() => {
+                currentIndex = (currentIndex + 1) % totalItems;
+                updateCarousel();
+            }, 5000);
+        });
+    }
+
+    // Initialize
+    updateCarousel();
+    
+    // Back to top button
+    const backToTopButton = document.getElementById('backToTop');
+    
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            backToTopButton.classList.add('show');
+        } else {
+            backToTopButton.classList.remove('show');
+        }
+    });
+    
+    backToTopButton.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+    
+    // Navbar scroll effect
+    const navbar = document.querySelector('.navbar');
+    
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+    
+    // Product modal functionality
+    const productModal = new bootstrap.Modal(document.getElementById('productModal'));
+    
+    // Product data
+    const productData = {
+        'Aetherium Spectre': {
+            image: 'https://images.unsplash.com/photo-1708389683924-1685acff381f?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+            description: 'The Aetherium Spectre represents the pinnacle of electric luxury, combining zero-emission driving with uncompromising performance and comfort.',
+            specs: [
+                'Range: 620 miles on single charge',
+                'Acceleration: 0-60 mph in 2.8 seconds',
+                'Top Speed: 200 mph',
+                'Charging: 0-80% in 20 minutes',
+                'Autonomous Driving: Level 4 capability',
+                'Interior: Handcrafted with sustainable materials'
+            ]
+        },
+        'Vortex GT': {
+            image: 'https://images.unsplash.com/photo-1614393889816-89c1570ff1e1?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+            description: 'The Vortex GT is a track-inspired high-performance sports car that delivers adrenaline-pumping excitement with precision handling.',
+            specs: [
+                'Engine: Twin-turbo V8 with 720 HP',
+                'Acceleration: 0-60 mph in 2.5 seconds',
+                'Top Speed: 215 mph',
+                'Body: Carbon fiber construction',
+                'Aerodynamics: Active aero package',
+                'Suspension: Race-derived adaptive system'
+            ]
+        },
+        'Pinnacle SUV': {
+            image: 'https://images.unsplash.com/photo-1649583747340-e1b026c71e59?q=80&w=1228&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+            description: 'The Pinnacle SUV combines luxury, comfort, and exceptional off-road capabilities in a sophisticated package.',
+            specs: [
+                'Engine: 4.0L V8 twin-turbo',
+                'Power: 550 HP',
+                'Suspension: Adaptive air with terrain response',
+                'Interior: Hand-stitched leather',
+                'Audio: 23-speaker premium system',
+                'Safety: Advanced driver assistance'
+            ]
+        },
+        'Nexus E1': {
+            image: 'https://images.unsplash.com/photo-1614393889816-89c1570ff1e1?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+            description: 'The Nexus E1 is an all-electric hypercar that pushes the boundaries of performance with revolutionary technology.',
+            specs: [
+                'Powertrain: Quad-motor with 1,100 HP',
+                'Acceleration: 0-60 mph in 1.9 seconds',
+                'Top Speed: 250 mph',
+                'Chassis: Carbon-titanium monocoque',
+                'Range: 450 miles',
+                'Technology: Advanced torque vectoring'
+            ]
+        },
+        'Celestial Coupe': {
+            image: 'https://plus.unsplash.com/premium_photo-1694707175420-0b2b2cf628c0?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+            description: 'The Celestial Coupe is a grand tourer that perfectly balances exhilarating performance with refined comfort.',
+            specs: [
+                'Engine: Biturbo V12 with 680 HP',
+                'Acceleration: 0-60 mph in 3.2 seconds',
+                'Top Speed: 205 mph',
+                'Steering: Active rear-wheel system',
+                'Interior: Executive rear seating',
+                'Safety: Night vision with animal detection'
+            ]
+        },
+        'Quantum X': {
+            image: 'https://plus.unsplash.com/premium_photo-1693828619654-b0b924a4be47?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+            description: 'The Quantum X is a futuristic concept car that showcases the next generation of mobility with autonomous capabilities.',
+            specs: [
+                'Autonomy: Level 4 self-driving',
+                'Access: Biometric personalization',
+                'Exterior: Self-healing surface',
+                'Display: Holographic augmented reality',
+                'Power: Electric with wireless charging',
+                'Connectivity: Full IoT integration'
+            ]
+        }
+    };
+    
+    // Function to open product modal
+    window.openProductModal = function(productName) {
+        const product = productData[productName];
+        if (product) {
+            document.getElementById('modalProductName').textContent = productName;
+            document.getElementById('modalProductImage').src = product.image;
+            document.getElementById('modalProductDescription').textContent = product.description;
+            
+            const specsList = document.getElementById('modalProductSpecs');
+            specsList.innerHTML = '';
+            product.specs.forEach(spec => {
+                const li = document.createElement('li');
+                li.textContent = spec;
+                specsList.appendChild(li);
+            });
+            
+            productModal.show();
+        }
+    };
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                window.scrollTo({
+                    top: target.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+    
+    // Close promo bar
+    document.querySelector('.promo-bar button').addEventListener('click', function() {
+        document.querySelector('.promo-bar').style.display = 'none';
+    });
+});
+    </script>
+</body>
+</html>

@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn - CarX Premium Automotive</title>
+    <link rel="stylesheet" href="styles/learn.css">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <style>
+        /* if needed  */
+    </style>
+</head>
+<body>
+    <!-- Reading Progress Bar -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="learn-header">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <a href="index.html" class="navbar-brand">CarX</a>
+                <div class="learn-header-icons">
+                    <div class="header-icon" id="savedIcon">
+                        <i class="bi bi-bookmark"></i>
+                        <span class="icon-badge" id="savedCount">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb-container">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Learn</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <h1 class="hero-title">Learn About Cars</h1>
+            <p class="hero-subtitle">Your comprehensive guide to understanding vehicles, from basic maintenance to the future of electric mobility</p>
+        </div>
+    </section>
+
+    <!-- Topic Categories -->
+    <section class="topics-section">
+        <div class="container">
+            <h2 class="section-title">Explore Topics</h2>
+            <p class="section-subtitle">Browse our comprehensive collection of automotive knowledge across different categories</p>
+            
+            <div class="topics-grid" id="topicsGrid">
+                <!-- Topics will be dynamically loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Search and Filter -->
+    <section class="search-filter-section">
+        <div class="container">
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Search articles..." id="searchInput">
+                <button class="search-btn" id="searchBtn">
+                    <i class="bi bi-search"></i>
+                </button>
+            </div>
+            
+            <div class="filter-tags" id="filterTags">
+                <div class="filter-tag active" data-category="all">All Topics</div>
+                <div class="filter-tag" data-category="basics">Car Basics</div>
+                <div class="filter-tag" data-category="ev">EV vs Fuel</div>
+                <div class="filter-tag" data-category="buying">Buying Guides</div>
+                <div class="filter-tag" data-category="maintenance">Maintenance</div>
+                <div class="filter-tag" data-category="future">Future Tech</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Sections -->
+    <section class="content-sections">
+        <div class="container">
+            <!-- Car Basics Section -->
+            <div class="content-section" data-category="basics">
+                <h2 class="section-heading">Car Basics</h2>
+                <p class="section-intro">Understanding the fundamentals of how cars work is essential for every vehicle owner. Explore these articles to build your automotive knowledge.</p>
+                
+                <div class="articles-accordion" id="basicsAccordion">
+                    <!-- Articles will be dynamically loaded here -->
+                </div>
+            </div>
+            
+            <!-- EV vs Fuel Section -->
+            <div class="content-section" data-category="ev">
+                <h2 class="section-heading">EV vs Fuel</h2>
+                <p class="section-intro">The automotive landscape is evolving with electric vehicles becoming increasingly popular. Learn about the differences, advantages, and considerations of EVs compared to traditional fuel vehicles.</p>
+                
+                <div class="articles-accordion" id="evAccordion">
+                    <!-- Articles will be dynamically loaded here -->
+                </div>
+            </div>
+            
+            <!-- Buying Guides Section -->
+            <div class="content-section" data-category="buying">
+                <h2 class="section-heading">Buying Guides</h2>
+                <p class="section-intro">Purchasing a vehicle is a significant investment. These guides will help you make informed decisions and navigate the car buying process with confidence.</p>
+                
+                <div class="articles-accordion" id="buyingAccordion">
+                    <!-- Articles will be dynamically loaded here -->
+                </div>
+            </div>
+            
+            <!-- Maintenance Section -->
+            <div class="content-section" data-category="maintenance">
+                <h2 class="section-heading">Maintenance Tips</h2>
+                <p class="section-intro">Proper maintenance is key to extending your vehicle's lifespan and ensuring optimal performance. Discover essential tips and best practices for vehicle care.</p>
+                
+                <div class="articles-accordion" id="maintenanceAccordion">
+                    <!-- Articles will be dynamically loaded here -->
+                </div>
+            </div>
+            
+            <!-- Future Tech Section -->
+            <div class="content-section" data-category="future">
+                <h2 class="section-heading">Future of Cars</h2>
+                <p class="section-intro">The automotive industry is rapidly evolving with new technologies and innovations. Stay ahead of the curve with insights into the future of mobility.</p>
+                
+                <div class="articles-accordion" id="futureAccordion">
+                    <!-- Articles will be dynamically loaded here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Saved Articles Section -->
+    <section class="saved-articles" id="savedArticles">
+        <div class="container">
+            <h2 class="section-title">Saved Articles</h2>
+            <div class="saved-articles-grid" id="savedArticlesGrid">
+                <!-- Saved articles will be dynamically loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="bi bi-arrow-up"></i>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <i class="bi bi-check-circle"></i>
+        <span id="toastMessage">Article saved</span>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script>
+        // Data for topics
+        const topics = [
+            {
+                id: 1,
+                title: "Car Basics",
+                description: "Learn the fundamentals of how cars work and essential automotive knowledge",
+                icon: "bi bi-car-front",
+                category: "basics"
+            },
+            {
+                id: 2,
+                title: "EV vs Fuel",
+                description: "Compare electric vehicles with traditional fuel-powered cars",
+                icon: "bi bi-lightning-charge",
+                category: "ev"
+            },
+            {
+                id: 3,
+                title: "Buying Guides",
+                description: "Expert advice to help you make informed car purchasing decisions",
+                icon: "bi bi-credit-card",
+                category: "buying"
+            },
+            {
+                id: 4,
+                title: "Maintenance Tips",
+                description: "Keep your vehicle in top condition with these maintenance guides",
+                icon: "bi bi-tools",
+                category: "maintenance"
+            },
+            {
+                id: 5,
+                title: "Future Tech",
+                description: "Explore emerging technologies shaping the future of automotive industry",
+                icon: "bi bi-cpu",
+                category: "future"
+            }
+        ];
+
+        // Data for articles
+        const articles = {
+            basics: [
+                {
+                    id: 101,
+                    title: "Understanding Engine Types",
+                    excerpt: "Learn about different engine configurations and how they impact performance and efficiency.",
+                    content: "Engines come in various configurations, each with unique characteristics. The most common types include inline engines, V engines, flat engines, and rotary engines. Inline engines have cylinders arranged in a straight line, offering simplicity and cost-effectiveness. V engines have two banks of cylinders angled in a V shape, providing a more compact design. Flat engines, also known as boxer engines, have cylinders arranged horizontally opposite each other, lowering the vehicle's center of gravity. Rotary engines use a unique rotary design instead of pistons, offering high power-to-weight ratios but lower fuel efficiency."
+                },
+                {
+                    id: 102,
+                    title: "How Transmissions Work",
+                    excerpt: "Discover the different types of transmissions and their role in vehicle performance.",
+                    content: "Transmissions are responsible for transferring power from the engine to the wheels. Manual transmissions require the driver to manually select gears using a clutch pedal and gear shifter. They offer more control and are often more fuel-efficient. Automatic transmissions handle gear changes automatically, providing convenience in stop-and-go traffic. Continuously Variable Transmissions (CVTs) offer seamless acceleration without distinct gear shifts. Dual-Clutch Transmissions (DCTs) combine the efficiency of manuals with the convenience of automatics, using two separate clutches for odd and even gears."
+                },
+                {
+                    id: 103,
+                    title: "Braking Systems Explained",
+                    excerpt: "Learn about the components and operation of modern vehicle braking systems.",
+                    content: "Modern braking systems consist of several key components working together to safely slow and stop your vehicle. The master cylinder converts the force from your brake pedal into hydraulic pressure. Brake lines carry this pressure to the wheels, where calipers squeeze brake pads against rotors (disc brakes) or shoes press against drums (drum brakes). Anti-lock Braking Systems (ABS) prevent wheel lockup during hard braking by rapidly pulsing the brakes. Electronic Brake-force Distribution (EBD) optimizes braking force between front and rear wheels, while Brake Assist provides additional braking power during emergency stops."
+                }
+            ],
+            ev: [
+                {
+                    id: 201,
+                    title: "How EV Charging Works",
+                    excerpt: "Understand the different types of EV charging and what you need to know.",
+                    content: "Electric vehicle charging is categorized into three levels. Level 1 charging uses a standard 120-volt household outlet and provides about 4-5 miles of range per hour. It's the slowest method but requires no special equipment. Level 2 charging uses 240-volt outlets (similar to clothes dryers) and provides 10-60 miles of range per hour. This is the most common home charging solution. DC Fast Charging (Level 3) uses 480-volt direct current and can provide 60-80% battery charge in 20-30 minutes. These are typically found at public charging stations along highways. Charging time also depends on battery capacity, vehicle acceptance rate, and charger power output."
+                },
+                {
+                    id: 202,
+                    title: "EV Battery Technology",
+                    excerpt: "Explore the technology behind electric vehicle batteries and future developments.",
+                    content: "Most electric vehicles use lithium-ion battery packs composed of multiple modules containing individual cells. These batteries store energy in chemical form and convert it to electrical energy to power the vehicle. Battery capacity is measured in kilowatt-hours (kWh), with higher numbers providing greater range. Current EV batteries typically last 8-15 years before needing replacement. Battery management systems monitor temperature, voltage, and current to optimize performance and longevity. New developments include solid-state batteries that promise higher energy density, faster charging, and improved safety. Battery recycling programs are also expanding to recover valuable materials and reduce environmental impact."
+                },
+                {
+                    id: 203,
+                    title: "EV vs Gas: Total Cost of Ownership",
+                    excerpt: "Compare the long-term costs of owning an electric vehicle versus a gas-powered car.",
+                    content: "When comparing total cost of ownership, electric vehicles often have higher upfront costs but lower operating expenses. EVs have fewer moving parts, reducing maintenance needs by approximately 40%. Electricity costs less than gasoline per mile, with EVs costing about half as much to fuel. Home charging provides additional convenience and savings. However, battery replacement after 8-15 years can be a significant expense. Tax incentives and rebates can offset the higher purchase price. Insurance costs vary by model but are generally comparable. Resale values have historically been lower for EVs but are improving as technology advances and demand increases."
+                }
+            ],
+            buying: [
+                {
+                    id: 301,
+                    title: "New vs Used Cars",
+                    excerpt: "Pros and cons of buying new versus used vehicles to help you decide.",
+                    content: "New cars offer the latest technology, full warranty coverage, and the peace of mind that comes with knowing the vehicle's history. They also typically have better financing options and fuel efficiency. However, they depreciate rapidly, losing 20-30% of their value in the first year. Used cars offer significant cost savings and slower depreciation. You can get more features for your money with a used vehicle. Certified Pre-Owned (CPO) programs provide warranty coverage and thorough inspections. However, used cars may have higher maintenance costs and potentially unknown issues. Extended warranties can provide additional protection but add to the overall cost."
+                },
+                {
+                    id: 302,
+                    title: "Car Financing Options",
+                    excerpt: "Understand different ways to finance your car purchase and what works best for you.",
+                    content: "Car financing options include loans, leases, and cash purchases. Loans involve borrowing money and paying it back with interest over a set period. They allow you to build equity in the vehicle and have no mileage restrictions. Leases involve paying for the vehicle's depreciation during the lease term, plus interest and fees. They offer lower monthly payments and the ability to drive a new car every few years, but you don't own the vehicle and face mileage limits. Cash purchases avoid interest charges and provide immediate ownership but require significant upfront capital. Your choice depends on your budget, driving habits, and long-term goals."
+                },
+                {
+                    id: 303,
+                    title: "Essential Pre-Purchase Inspection",
+                    excerpt: "What to check before buying a car to avoid costly mistakes.",
+                    content: "A thorough pre-purchase inspection can save you from buying a vehicle with hidden problems. Start with a visual inspection of the exterior and interior for signs of damage or excessive wear. Check all fluids (oil, coolant, brake fluid, transmission fluid) for proper levels and condition. Inspect tires for uneven wear, which can indicate alignment or suspension issues. Test all electrical components, including lights, windows, and infotainment systems. During a test drive, listen for unusual noises and test the brakes, acceleration, and handling. Consider hiring a professional mechanic for a comprehensive inspection, especially for used vehicles. Obtain a vehicle history report to check for accidents, title issues, and service records."
+                }
+            ],
+            maintenance: [
+                {
+                    id: 401,
+                    title: "Regular Maintenance Schedule",
+                    excerpt: "Learn what maintenance your car needs and when to perform it.",
+                    content: "Following a regular maintenance schedule is crucial for vehicle longevity and reliability. Every 3,000-7,500 miles, change the engine oil and filter, rotate tires, and inspect brakes, fluids, and lights. Every 15,000-30,000 miles, replace the air filter, check coolant hoses, and inspect the suspension system. Every 30,000-60,000 miles, replace spark plugs, check/replace transmission fluid, and inspect the drive belts. Every 60,000-100,000 miles, replace timing belts (if equipped), coolant, and differential fluid. Always consult your owner's manual for manufacturer-specific recommendations. Keeping detailed maintenance records can also improve resale value and help diagnose problems more quickly."
+                },
+                {
+                    id: 402,
+                    title: "DIY vs Professional Maintenance",
+                    excerpt: "Understand which maintenance tasks you can do yourself and when to seek professional help.",
+                    content: "DIY maintenance can save money and provide a sense of accomplishment, but it's important to know your limits. Simple tasks like changing oil, replacing air filters, changing windshield wipers, and replacing light bulbs can be done at home with basic tools and knowledge. More complex tasks like brake work, transmission service, and electrical repairs often require specialized tools, training, and diagnostic equipment. Attempting these without proper expertise can lead to safety issues and costly mistakes. Consider your skill level, available tools, time, and the potential consequences of mistakes. When in doubt, consult a professional mechanic to ensure the job is done correctly and safely."
+                },
+                {
+                    id: 403,
+                    title: "Common Maintenance Mistakes",
+                    excerpt: "Avoid these common maintenance errors that can damage your vehicle.",
+                    content: "Many car owners make maintenance mistakes that can lead to premature wear and costly repairs. Ignoring the check engine light is a common error that can allow small problems to become major issues. Using incorrect fluids or parts can cause damage to systems and void warranties. Neglecting tire maintenance, including rotation, alignment, and proper inflation, leads to uneven wear and reduced safety. Skipping oil changes or using the wrong oil type can cause engine damage. Overlooking the owner's manual means missing important maintenance schedules and specifications. Finally, choosing service based solely on price rather than quality can result in subpar work and additional expenses down the line."
+                }
+            ],
+            future: [
+                {
+                    id: 501,
+                    title: "Autonomous Driving Technology",
+                    excerpt: "Explore the current state and future potential of self-driving cars.",
+                    content: "Autonomous driving technology is advancing rapidly, with vehicles currently available at Levels 0-2 (no automation to partial automation). Level 3 vehicles can handle most driving tasks but require human intervention when requested. Level 4 vehicles can operate autonomously in specific conditions and areas, while Level 5 vehicles would be fully autonomous in all conditions. Key technologies enabling autonomous driving include advanced sensors (lidar, radar, cameras), artificial intelligence for decision-making, and vehicle-to-vehicle communication. Challenges include regulatory approval, public acceptance, cybersecurity concerns, and handling unpredictable scenarios. Full adoption is likely to occur gradually, starting with highways and specific urban areas."
+                },
+                {
+                    id: 502,
+                    title: "Hydrogen Fuel Cell Vehicles",
+                    excerpt: "Learn about hydrogen fuel cell technology and its potential as an alternative to batteries.",
+                    content: "Hydrogen fuel cell vehicles (FCVs) use hydrogen gas to generate electricity onboard, with water vapor as the only emission. They offer advantages over battery electric vehicles including faster refueling (3-5 minutes), longer range (300-400 miles), and potentially lower environmental impact if hydrogen is produced from renewable sources. However, challenges include limited hydrogen infrastructure, high production costs, and energy inefficiency in hydrogen production. Current FCVs are more expensive than comparable EVs, and hydrogen fueling stations are rare outside certain regions like California and Japan. Advances in hydrogen production methods and fuel cell technology could make FCVs more competitive in the future, especially for commercial applications like trucks and buses."
+                },
+                {
+                    id: 503,
+                    title: "Connected Car Technology",
+                    excerpt: "Discover how cars are becoming more connected and what it means for drivers.",
+                    content: "Connected car technology integrates vehicles with external networks, devices, and services, transforming the driving experience. Features include real-time traffic information, remote diagnostics, over-the-air software updates, and vehicle-to-everything (V2X) communication. V2X enables cars to communicate with each other (V2V), infrastructure (V2I), pedestrians (V2P), and networks (V2N), improving safety and traffic flow. Connected cars also offer enhanced entertainment options, personalized settings, and integration with smart home systems. However, increased connectivity raises concerns about data privacy, cybersecurity vulnerabilities, and potential distractions. As 5G networks expand, connected car capabilities will continue to grow, enabling more advanced features and services."
+                }
+            ]
+        };
+
+        // State management
+        let savedArticles = JSON.parse(localStorage.getItem('savedArticles')) || [];
+        let activeCategory = 'all';
+        let searchTerm = '';
+
+        // DOM elements
+        const topicsGrid = document.getElementById('topicsGrid');
+        const searchInput = document.getElementById('searchInput');
+        const searchBtn = document.getElementById('searchBtn');
+        const filterTags = document.querySelectorAll('.filter-tag');
+        const savedIcon = document.getElementById('savedIcon');
+        const savedCount = document.getElementById('savedCount');
+        const savedArticlesSection = document.getElementById('savedArticles');
+        const savedArticlesGrid = document.getElementById('savedArticlesGrid');
+        const backToTop = document.getElementById('backToTop');
+        const toast = document.getElementById('toast');
+        const toastMessage = document.getElementById('toastMessage');
+        const progressBar = document.getElementById('progressBar');
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            renderTopics();
+            renderArticles();
+            updateSavedUI();
+            setupEventListeners();
+            updateReadingProgress();
+        });
+
+        // Setup event listeners
+        function setupEventListeners() {
+            // Search functionality
+            searchBtn.addEventListener('click', searchArticles);
+            searchInput.addEventListener('keyup', function(e) {
+                if (e.key === 'Enter') searchArticles();
+            });
+            
+            // Filter tags
+            filterTags.forEach(tag => {
+                tag.addEventListener('click', function() {
+                    filterTags.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    activeCategory = this.dataset.category;
+                    filterContent();
+                });
+            });
+            
+            // Saved articles icon
+            savedIcon.addEventListener('click', function() {
+                savedArticlesSection.classList.toggle('show');
+                if (savedArticlesSection.classList.contains('show')) {
+                    savedArticlesSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+            
+            // Back to top button
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTop.classList.add('show');
+                } else {
+                    backToTop.classList.remove('show');
+                }
+                updateReadingProgress();
+            });
+            
+            backToTop.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+
+        // Render topics
+        function renderTopics() {
+            topicsGrid.innerHTML = '';
+            
+            topics.forEach(topic => {
+                const topicCard = document.createElement('div');
+                topicCard.className = 'topic-card';
+                topicCard.dataset.category = topic.category;
+                
+                topicCard.innerHTML = `
+                    <div class="topic-icon">
+                        <i class="bi ${topic.icon}"></i>
+                    </div>
+                    <div class="topic-content">
+                        <h3 class="topic-title">${topic.title}</h3>
+                        <p class="topic-description">${topic.description}</p>
+                        <a href="#${topic.category}" class="topic-link">
+                            Read More <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                `;
+                
+                topicsGrid.appendChild(topicCard);
+            });
+        }
+
+        // Render articles
+        function renderArticles() {
+            // Render articles for each category
+            Object.keys(articles).forEach(category => {
+                const accordion = document.getElementById(`${category}Accordion`);
+                accordion.innerHTML = '';
+                
+                articles[category].forEach(article => {
+                    const isSaved = savedArticles.some(saved => saved.id === article.id);
+                    
+                    const articleItem = document.createElement('div');
+                    articleItem.className = 'article-item';
+                    articleItem.dataset.id = article.id;
+                    
+                    articleItem.innerHTML = `
+                        <div class="article-header">
+                            <h3 class="article-title">
+                                ${article.title}
+                                <i class="bi bi-bookmark save-icon ${isSaved ? 'saved' : ''}" data-id="${article.id}"></i>
+                            </h3>
+                            <i class="bi bi-chevron-down article-toggle"></i>
+                        </div>
+                        <div class="article-content">
+                            <div class="article-body">
+                                ${article.content}
+                            </div>
+                        </div>
+                    `;
+                    
+                    accordion.appendChild(articleItem);
+                });
+            });
+            
+            // Add event listeners to article headers
+            document.querySelectorAll('.article-header').forEach(header => {
+                header.addEventListener('click', function(e) {
+                    // Don't toggle if clicking on save icon
+                    if (e.target.classList.contains('save-icon')) return;
+                    
+                    const articleItem = this.parentElement;
+                    articleItem.classList.toggle('active');
+                });
+            });
+            
+            // Add event listeners to save icons
+            document.querySelectorAll('.save-icon').forEach(icon => {
+                icon.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const articleId = parseInt(this.dataset.id);
+                    toggleSaveArticle(articleId);
+                });
+            });
+        }
+
+        // Search articles
+        function searchArticles() {
+            searchTerm = searchInput.value.toLowerCase().trim();
+            filterContent();
+        }
+
+        // Filter content based on category and search term
+        function filterContent() {
+            const contentSections = document.querySelectorAll('.content-section');
+            
+            contentSections.forEach(section => {
+                const category = section.dataset.category;
+                const shouldShow = (activeCategory === 'all' || activeCategory === category);
+                
+                if (shouldShow) {
+                    section.style.display = 'block';
+                    
+                    // Filter articles within this section
+                    const articleItems = section.querySelectorAll('.article-item');
+                    let hasVisibleArticles = false;
+                    
+                    articleItems.forEach(item => {
+                        const articleId = parseInt(item.dataset.id);
+                        const article = findArticleById(articleId);
+                        
+                        if (article && (searchTerm === '' || 
+                            article.title.toLowerCase().includes(searchTerm) || 
+                            article.content.toLowerCase().includes(searchTerm))) {
+                            item.style.display = 'block';
+                            hasVisibleArticles = true;
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                    
+                    // Hide section if no articles match search
+                    if (searchTerm !== '' && !hasVisibleArticles) {
+                        section.style.display = 'none';
+                    }
+                } else {
+                    section.style.display = 'none';
+                }
+            });
+        }
+
+        // Find article by ID
+        function findArticleById(id) {
+            for (const category in articles) {
+                const article = articles[category].find(a => a.id === id);
+                if (article) return article;
+            }
+            return null;
+        }
+
+        // Toggle save article
+        function toggleSaveArticle(articleId) {
+            const article = findArticleById(articleId);
+            if (!article) return;
+            
+            const saveIcon = document.querySelector(`.save-icon[data-id="${articleId}"]`);
+            const isSaved = savedArticles.some(saved => saved.id === articleId);
+            
+            if (isSaved) {
+                savedArticles = savedArticles.filter(saved => saved.id !== articleId);
+                saveIcon.classList.remove('saved');
+                showToast('Article removed from saved');
+            } else {
+                savedArticles.push(article);
+                saveIcon.classList.add('saved');
+                showToast('Article saved');
+            }
+            
+            localStorage.setItem('savedArticles', JSON.stringify(savedArticles));
+            updateSavedUI();
+        }
+
+        // Update saved articles UI
+        function updateSavedUI() {
+            // Update saved count
+            savedCount.textContent = savedArticles.length;
+            
+            // Update saved articles section
+            if (savedArticles.length === 0) {
+                savedArticlesGrid.innerHTML = `
+                    <div class="col-12 text-center">
+                        <p>You haven't saved any articles yet.</p>
+                        <p>Click the bookmark icon on any article to save it here.</p>
+                    </div>
+                `;
+            } else {
+                savedArticlesGrid.innerHTML = '';
+                
+                savedArticles.forEach(article => {
+                    const savedArticleCard = document.createElement('div');
+                    savedArticleCard.className = 'saved-article-card';
+                    
+                    savedArticleCard.innerHTML = `
+                        <h3 class="saved-article-title">${article.title}</h3>
+                        <p class="saved-article-excerpt">${article.excerpt}</p>
+                        <div class="saved-article-actions">
+                            <a href="#" class="read-article-btn" data-id="${article.id}">Read Article</a>
+                            <button class="remove-saved-btn" data-id="${article.id}">
+                                <i class="bi bi-trash"></i>
+                            </button>
+                        </div>
+                    `;
+                    
+                    savedArticlesGrid.appendChild(savedArticleCard);
+                });
+                
+                // Add event listeners to read article buttons
+                document.querySelectorAll('.read-article-btn').forEach(btn => {
+                    btn.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const articleId = parseInt(this.dataset.id);
+                        const article = findArticleById(articleId);
+                        if (article) {
+                            // Find the category of this article
+                            let category = '';
+                            for (const cat in articles) {
+                                if (articles[cat].some(a => a.id === articleId)) {
+                                    category = cat;
+                                    break;
+                                }
+                            }
+                            
+                            // Scroll to the section and expand the article
+                            const section = document.querySelector(`.content-section[data-category="${category}"]`);
+                            if (section) {
+                                section.scrollIntoView({ behavior: 'smooth' });
+                                
+                                const articleItem = section.querySelector(`.article-item[data-id="${articleId}"]`);
+                                if (articleItem) {
+                                    articleItem.classList.add('active');
+                                }
+                            }
+                        }
+                    });
+                });
+                
+                // Add event listeners to remove buttons
+                document.querySelectorAll('.remove-saved-btn').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const articleId = parseInt(this.dataset.id);
+                        toggleSaveArticle(articleId);
+                    });
+                });
+            }
+        }
+
+        // Update reading progress
+        function updateReadingProgress() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrollPercent = (scrollTop / scrollHeight) * 100;
+            
+            progressBar.style.width = `${scrollPercent}%`;
+        }
+
+        // Show toast notification
+        function showToast(message) {
+            toastMessage.textContent = message;
+            toast.classList.add('show');
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

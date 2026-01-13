@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - CarX Premium Automotive</title>
+
+    <link rel="stylesheet" href="styles/contact.css">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <style>
+          /* if needed */
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="contact-header">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <a href="index.html" class="navbar-brand">CarX</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb-container">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Contact</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <h1 class="hero-title">Contact Us</h1>
+            <p class="hero-subtitle">We're here to help and answer any question you might have. We look forward to hearing from you.</p>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-form-section">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">Fill out the form below and we'll get back to you as soon as possible.</p>
+            
+            <div class="contact-form-container">
+                <div class="success-message" id="successMessage">
+                    <i class="bi bi-check-circle"></i> Thank you for your message! We'll get back to you soon.
+                </div>
+                
+                <form id="contactForm">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="fullName" class="form-label">Full Name *</label>
+                                <input type="text" class="form-control" id="fullName" required>
+                                <div class="error-message">Please enter your full name</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email Address *</label>
+                                <input type="email" class="form-control" id="email" required>
+                                <div class="error-message">Please enter a valid email address</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject" class="form-label">Subject</label>
+                        <input type="text" class="form-control" id="subject">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message" class="form-label">Message *</label>
+                        <textarea class="form-control" id="message" rows="5" required maxlength="500"></textarea>
+                        <div class="char-counter" id="charCounter">0/500</div>
+                        <div class="error-message">Please enter your message</div>
+                    </div>
+                    
+                    <button type="submit" class="btn-submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Information Section -->
+    <section class="contact-info-section">
+        <div class="container">
+            <h2 class="section-title">Contact Information</h2>
+            <p class="section-subtitle">Reach out to us through any of these channels</p>
+            
+            <div class="info-cards">
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="bi bi-envelope"></i>
+                    </div>
+                    <h3 class="info-title">Email Us</h3>
+                    <p class="info-text">For general inquiries and support</p>
+                    <a href="mailto:info@carx.com" class="info-link">info@carx.com</a>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="bi bi-telephone"></i>
+                    </div>
+                    <h3 class="info-title">Call Us</h3>
+                    <p class="info-text">Mon-Fri from 9am to 6pm</p>
+                    <a href="tel:+1234567890" class="info-link">+1 (234) 567-890</a>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="bi bi-clock"></i>
+                    </div>
+                    <h3 class="info-title">Business Hours</h3>
+                    <p class="info-text">Monday - Friday: 9am - 6pm</p>
+                    <p class="info-text">Saturday: 10am - 4pm</p>
+                    <p class="info-text">Sunday: Closed</p>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="bi bi-headset"></i>
+                    </div>
+                    <h3 class="info-title">Support</h3>
+                    <p class="info-text">24/7 Emergency Support</p>
+                    <a href="tel:+1234567890" class="info-link">+1 (234) 567-890</a>
+                    
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section class="location-section">
+        <div class="container">
+            <h2 class="section-title">Our Location</h2>
+            <p class="section-subtitle">Visit our showroom for a personalized experience</p>
+            
+            <div class="location-container">
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.1234567890123!2d-74.0059413!3d40.7127837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQyJzQ2LjAiTiA3NMKwMDAnMjEuNCJX!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                
+                <div class="location-info">
+                    <h3 class="location-title">CarX Showroom</h3>
+                    
+                    <div class="location-details">
+                        <div class="location-detail">
+                            <i class="bi bi-geo-alt location-icon"></i>
+                            <div class="location-text">
+                                123 Automotive Avenue<br>
+                                New York, NY 10001<br>
+                                United States
+                            </div>
+                        </div>
+                        
+                        <div class="location-detail">
+                            <i class="bi bi-telephone location-icon"></i>
+                            <div class="location-text">
+                                +1 (234) 567-890
+                            </div>
+                        </div>
+                        
+                        <div class="location-detail">
+                            <i class="bi bi-envelope location-icon"></i>
+                            <div class="location-text">
+                                showroom@carx.com
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="https://maps.google.com/?q=123+Automotive+Avenue,+New+York,+NY+10001" target="_blank" class="btn-directions">
+                        <i class="bi bi-directions"></i> Get Directions
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <p class="section-subtitle">Find answers to common questions about our services</p>
+            
+            <div class="faq-container">
+                <div class="faq-accordion">
+                    <div class="faq-item">
+                        <div class="faq-header">
+                            <h3 class="faq-question">How quickly can I expect a response to my inquiry?</h3>
+                            <i class="bi bi-chevron-down faq-toggle"></i>
+                        </div>
+                        <div class="faq-content">
+                            <div class="faq-body">
+                                We typically respond to all inquiries within 24 business hours. For urgent matters, please call our support line at +1 (234) 567-890 for immediate assistance.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-header">
+                            <h3 class="faq-question">Do you offer international shipping?</h3>
+                            <i class="bi bi-chevron-down faq-toggle"></i>
+                        </div>
+                        <div class="faq-content">
+                            <div class="faq-body">
+                                Yes, we offer international shipping to most countries. Shipping costs and delivery times vary depending on the destination. Please contact us with your specific location for detailed information.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-header">
+                            <h3 class="faq-question">What payment methods do you accept?</h3>
+                            <i class="bi bi-chevron-down faq-toggle"></i>
+                        </div>
+                        <div class="faq-content">
+                            <div class="faq-body">
+                                We accept all major credit cards (Visa, MasterCard, American Express), PayPal, and bank transfers. All transactions are secure and encrypted for your protection.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-header">
+                            <h3 class="faq-question">Can I schedule a test drive?</h3>
+                            <i class="bi bi-chevron-down faq-toggle"></i>
+                        </div>
+                        <div class="faq-content">
+                            <div class="faq-body">
+                                Absolutely! You can schedule a test drive by calling us at +1 (234) 567-890 or by filling out the contact form above. Please specify which vehicle you're interested in and your preferred date and time.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-header">
+                            <h3 class="faq-question">Do you offer financing options?</h3>
+                            <i class="bi bi-chevron-down faq-toggle"></i>
+                        </div>
+                        <div class="faq-content">
+                            <div class="faq-body">
+                                Yes, we offer a variety of financing options through our trusted partners. Our finance team can help you find a plan that fits your budget. Contact us to discuss your specific needs and eligibility.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="bi bi-arrow-up"></i>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <i class="bi bi-check-circle"></i>
+        <span id="toastMessage">Message sent successfully</span>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script>
+        // DOM elements
+        const contactForm = document.getElementById('contactForm');
+        const fullNameInput = document.getElementById('fullName');
+        const emailInput = document.getElementById('email');
+        const subjectInput = document.getElementById('subject');
+        const messageInput = document.getElementById('message');
+        const charCounter = document.getElementById('charCounter');
+        const successMessage = document.getElementById('successMessage');
+        const backToTop = document.getElementById('backToTop');
+        const toast = document.getElementById('toast');
+        const toastMessage = document.getElementById('toastMessage');
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            setupEventListeners();
+        });
+
+        // Setup event listeners
+        function setupEventListeners() {
+            // Form submission
+            contactForm.addEventListener('submit', handleFormSubmit);
+            
+            // Real-time validation
+            fullNameInput.addEventListener('blur', validateFullName);
+            emailInput.addEventListener('blur', validateEmail);
+            messageInput.addEventListener('blur', validateMessage);
+            
+            // Character counter for message
+            messageInput.addEventListener('input', updateCharCounter);
+            
+            // FAQ accordion
+            document.querySelectorAll('.faq-header').forEach(header => {
+                header.addEventListener('click', function() {
+                    const faqItem = this.parentElement;
+                    faqItem.classList.toggle('active');
+                });
+            });
+            
+            // Back to top button
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTop.classList.add('show');
+                } else {
+                    backToTop.classList.remove('show');
+                }
+            });
+            
+            backToTop.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+
+        // Handle form submission
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            
+            // Validate all fields
+            const isFullNameValid = validateFullName();
+            const isEmailValid = validateEmail();
+            const isMessageValid = validateMessage();
+            
+            if (isFullNameValid && isEmailValid && isMessageValid) {
+                // Show success message
+                successMessage.style.display = 'block';
+                
+                // Reset form
+                contactForm.reset();
+                updateCharCounter();
+                
+                // Scroll to success message
+                successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                
+                // Show toast notification
+                showToast('Message sent successfully!');
+                
+                // Hide success message after 5 seconds
+                setTimeout(() => {
+                    successMessage.style.display = 'none';
+                }, 5000);
+            }
+        }
+
+        // Validate full name
+        function validateFullName() {
+            const fullName = fullNameInput.value.trim();
+            
+            if (fullName === '') {
+                fullNameInput.classList.add('error');
+                return false;
+            } else {
+                fullNameInput.classList.remove('error');
+                return true;
+            }
+        }
+
+        // Validate email
+        function validateEmail() {
+            const email = emailInput.value.trim();
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            
+            if (email === '' || !emailRegex.test(email)) {
+                emailInput.classList.add('error');
+                return false;
+            } else {
+                emailInput.classList.remove('error');
+                return true;
+            }
+        }
+
+        // Validate message
+        function validateMessage() {
+            const message = messageInput.value.trim();
+            
+            if (message === '') {
+                messageInput.classList.add('error');
+                return false;
+            } else {
+                messageInput.classList.remove('error');
+                return true;
+            }
+        }
+
+        // Update character counter
+        function updateCharCounter() {
+            const messageLength = messageInput.value.length;
+            const maxLength = messageInput.getAttribute('maxlength');
+            
+            charCounter.textContent = `${messageLength}/${maxLength}`;
+            
+            if (messageLength > maxLength * 0.9) {
+                charCounter.classList.add('warning');
+            } else {
+                charCounter.classList.remove('warning');
+            }
+        }
+
+        // Show toast notification
+        function showToast(message) {
+            toastMessage.textContent = message;
+            toast.classList.add('show');
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
