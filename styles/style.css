@@ -1,4 +1,5 @@
- /* Color Variables */
+
+       /* Color Variables */
         :root {
             --primary: #000000;
             --secondary: #ffffff;
@@ -21,6 +22,35 @@
             position: relative;
             background: var(--light);
             color: var(--primary);
+        }
+
+        /* CHANGE: Added a new rule for the demo banner */
+        .demo-banner {
+            background-color: #fbbc04; /* A Google-like warning yellow */
+            color: #3c4043;
+            text-align: center;
+            padding: 15px;
+            font-size: 16px;
+            border-bottom: 3px solid #f29900;
+            font-weight: bold;
+            position: relative;
+        }
+
+        .demo-banner button {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: transparent;
+            border: none;
+            color: #3c4043;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .demo-banner button:hover {
+            transform: translateY(-50%) scale(1.2);
         }
 
         /* Promo Bar */
@@ -1156,6 +1186,17 @@
         .newsletter button:hover {
             background: var(--secondary);
             transform: translateY(-3px);
+        }
+
+        /* CHANGE: Added style for the on-page disclaimer */
+        .form-disclaimer {
+            text-align: center;
+            color: #5f6368;
+            font-size: 13px;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
         }
 
         /* Footer - New Design */

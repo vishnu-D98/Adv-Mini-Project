@@ -18,12 +18,14 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Custom CSS -->
-    <style>
-       /* if needed */
-    </style>
 </head>
 <body>
+    <!-- CHANGE: Added a very prominent demo banner at the top -->
+    <div class="demo-banner">
+        <strong>⚠️ DEMO: This is a FAKE website for a frontend project.</strong> DO NOT enter any real personal information.
+        <button type="button" class="btn-close" aria-label="Close"></button>
+    </div>
+
     <!-- Promo Bar -->
     <div class="promo-bar">
         <span>Free shipping on orders over $100 | Limited time offer</span>
@@ -547,10 +549,14 @@
                 <div class="col-md-8 text-center">
                     <h2>Stay Updated With CarX</h2>
                     <p>Subscribe to our newsletter to receive the latest updates on new products, exclusive offers, and automotive insights.</p>
-                    <form class="d-flex gap-2 justify-content-center">
+                    <form class="d-flex gap-2 justify-content-center" id="newsletter-form">
                         <input type="email" class="form-control form-control-lg" placeholder="Your email address" required>
                         <button type="submit" class="btn btn-warning btn-lg">Subscribe</button>
                     </form>
+                    <!-- CHANGE: Added a second, on-page disclaimer -->
+                    <p class="form-disclaimer">
+                        <strong>This form is for display purposes only and is non-functional.</strong>
+                    </p>
                 </div>
             </div>
         </div>
@@ -620,10 +626,14 @@
                         <div class="footer-newsletter">
                             <h5>Newsletter</h5>
                             <p>Subscribe for exclusive offers and updates</p>
-                            <form class="footer-newsletter-form">
+                            <form class="footer-newsletter-form" id="footer-newsletter-form">
                                 <input type="email" placeholder="Your email">
                                 <button type="submit">Subscribe</button>
                             </form>
+                            <!-- CHANGE: Added a second, on-page disclaimer -->
+                            <p class="form-disclaimer">
+                                <strong>This form is for display purposes only and is non-functional.</strong>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -974,6 +984,28 @@ document.addEventListener('DOMContentLoaded', function () {
     // Close promo bar
     document.querySelector('.promo-bar button').addEventListener('click', function() {
         document.querySelector('.promo-bar').style.display = 'none';
+    });
+    
+    // CHANGE: Added JavaScript to close demo banner
+    document.querySelector('.demo-banner button').addEventListener('click', function() {
+        document.querySelector('.demo-banner').style.display = 'none';
+    });
+    
+    // CHANGE: Added JavaScript to disable form submission for newsletter forms
+    document.getElementById('newsletter-form').addEventListener('submit', function(event) {
+        // Prevent the form from submitting
+        event.preventDefault(); 
+        
+        // Show an alert to inform the user
+        alert('DEMO: This form is non-functional. No data was submitted.');
+    });
+    
+    document.getElementById('footer-newsletter-form').addEventListener('submit', function(event) {
+        // Prevent the form from submitting
+        event.preventDefault(); 
+        
+        // Show an alert to inform the user
+        alert('DEMO: This form is non-functional. No data was submitted.');
     });
 });
     </script>
